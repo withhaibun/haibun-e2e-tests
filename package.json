@@ -2,6 +2,9 @@
   "name": "haibun-bdd",
   "version": "0.0.1",
   "description": "bdd tests for haibun",
+  "engines": {
+    "node": ">=14"
+  },
   "scripts": {
     "tsc-watch": "tsc --watch",
     "test": "HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli local",
