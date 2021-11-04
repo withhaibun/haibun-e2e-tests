@@ -42,11 +42,22 @@ var TALLY = 'tally';
 var TestRoute = /** @class */ (function () {
     function TestRoute(world) {
         var _this = this;
-        this.route = function (req, res) {
-            _this.world.shared.set(TALLY, "" + ((parseInt(_this.world.shared.get(TALLY), 10) || 0) + 1));
-            _this.world.logger.log("tally " + _this.world.shared.get(TALLY));
-            res.status(200).send("" + _this.world.shared.get(TALLY));
-        };
+        this.route = function (req, res) { return __awaiter(_this, void 0, void 0, function () {
+            var username;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.world.shared.set(TALLY, "" + ((parseInt(this.world.shared.get(TALLY), 10) || 0) + 1));
+                        this.world.logger.log("tally " + this.world.shared.get(TALLY));
+                        username = req.query.username;
+                        return [4 /*yield*/, (0, util_1.sleep)(Math.random() * 2000)];
+                    case 1:
+                        _a.sent();
+                        res.status(200).cookie('userid', username).send("tally " + this.world.shared.get(TALLY) + "<br />username " + username + " ");
+                        return [2 /*return*/];
+                }
+            });
+        }); };
         this.steps = {
             addRoute: {
                 gwta: 'start test route at {loc}',

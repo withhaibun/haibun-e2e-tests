@@ -7,23 +7,24 @@
   },
   "scripts": {
     "tsc-watch": "tsc --watch",
-    "test": "HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli local",
+    "test": "HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli local",
     "test-chromium": "HAIBUN_SPLIT_SHARED=a-browser=chromium haibun-cli local",
-    "test-chromium-loops": "HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=true HAIBUN_LOOPS=2 HAIBUN_MEMBERS=253 haibun-cli local",
+    "test-many": "HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=true HAIBUN_LOOPS=2 HAIBUN_MEMBERS=500 haibun-cli local",
     "test-firefox": "HAIBUN_SPLIT_SHARED=a-browser=firefox haibun-cli local",
     "test-webkit": "HAIBUN_SPLIT_SHARED=a-browser=webkit haibun-cli local",
     "test-local": "HAIBUN_SPLIT_SHARED='a-browser=chromium,webkit,firefox,chromium.iPhone 6,chromium.iPad (gen 7) landscape,chromium.iPad Mini,chromium.Pixel 5,chromium.iPhone X landscape,chromium.Kindle Fire HDX,chromium.Moto G4 landscape' haibun-cli local",
-    "test-envc": "HAIBUN_ENVC=what=what1,what=what2,also=also1,also=also2 haibun-cli envc"
+    "test-envc": "HAIBUN_ENVC=what=what1,what=what2,also=also1,also=also2 haibun-cli envc",
+    "test-envc-10": "HAIBUN_LOOPS=2 HAIBUN_MEMBERS=5 HAIBUN_ENVC=what=what1,what=what2,also=also1,also=also2 haibun-cli envc"
   },
   "keywords": [],
   "author": "vid",
   "license": "ISC",
   "dependencies": {
-    "@haibun/cli": "^1.0.2",
-    "@haibun/core": "^1.0.5",
+    "@haibun/cli": "^1.0.4",
+    "@haibun/core": "^1.0.8",
     "@haibun/domain-webpage": "^1.0.0",
     "@haibun/out-xunit": "^1.0.0",
-    "@haibun/web-playwright": "^1.0.0",
-    "@haibun/web-server-express": "^1.0.0"
+    "@haibun/web-playwright": "^1.0.6",
+    "@haibun/web-server-express": "^1.0.1"
   }
 }

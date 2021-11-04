@@ -3,9 +3,13 @@ Feature: A form and counter
 
     Backgrounds: service/local
 
-    On the form webpage
+    When I have a valid random username <username>
+
     Serve files from test
     Start test route at /count
-    When I input "hello" for input
+    On the form webpage
+    When I input <username> for input
     And I click the button Submit
     Then the URI should start with counter URI
+    And I should see <username>
+    And the cookie userid should be <username>
