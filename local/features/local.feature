@@ -10,6 +10,10 @@ Feature: A form and counter
     On the form webpage
     When I input <username> for input
     And I click the button Submit
-    Then the URI should start with counter URI
+
+    Then the URI query parameter username is <username>
+    Save URI query parameter username to username parameter
+    And the URI should start with counter URI
     And I should see <username>
+    And I should see username parameter
     And the cookie userid should be <username>
