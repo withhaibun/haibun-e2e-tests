@@ -7,6 +7,7 @@ Feature: A form and counter
 
     Serve files from test
     Start test route at /count
+    Show mounts
     On the form webpage
     When I input <username> for input
     And I click the button Submit
