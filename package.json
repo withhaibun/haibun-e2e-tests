@@ -7,6 +7,7 @@
   },
   "scripts": {
     "tsc-watch": "tsc --watch",
+    "build": "tsc",
     "test": "HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli local",
     "test-xss": "HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli local xss",
     "test-form": "HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli local form",
@@ -23,11 +24,12 @@
   "author": "vid",
   "license": "ISC",
   "dependencies": {
-    "@haibun/cli": "^1.1.2",
-    "@haibun/core": "^1.2.0",
-    "@haibun/domain-webpage": "^1.0.0",
+    "@haibun/cli": "^1.1.4",
+    "@haibun/core": "^1.2.2",
+    "@haibun/domain-webpage": "^1.1.1",
     "@haibun/out-xunit": "^1.0.0",
-    "@haibun/web-playwright": "^1.3.0",
-    "@haibun/web-server-express": "^1.0.1"
+    "@haibun/web-playwright": "^1.3.1",
+    "@haibun/web-server-express": "^1.1.1",
+    "typescript": "^4.5.5"
   }
 }
