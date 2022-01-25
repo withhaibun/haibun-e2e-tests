@@ -2,9 +2,9 @@
 
 End to end / integration features with Haibun.
 
-Use node version 14 or latest.
+Use node version 14 (or later).
 
-cd to the project directory, then
+`cd` to the project directory, then
 
 `npm i` to install libraries
 
@@ -12,4 +12,4 @@ cd to the project directory, then
 
 `npm run test` to run all tests.
 
-Take a look at tests in package.json for more test options.
+Take a look at scripts in package.json for more test options.
