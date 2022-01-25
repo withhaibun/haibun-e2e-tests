@@ -12,4 +12,7 @@ Use node version 14 (or later).
 
 `npm run test` to run all tests.
 
+Features are in local/features/.
+
 Take a look at scripts in package.json for more test options.
+
