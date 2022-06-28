@@ -10,4 +10,4 @@ Feature: A form and counter
 
     Concat xss and ?;alert('hi') as exploit
     On the exploit webpage
-    Dialog "clicked" message is "hi"
+    Dialog "clicked" message says "hi"

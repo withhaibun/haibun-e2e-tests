@@ -8,9 +8,9 @@
   "scripts": {
     "tsc-watch": "tsc --watch",
     "build": "tsc",
-    "test": "HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli local",
-    "test-xss": "HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli local xss",
-    "test-form": "HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli local form",
+    "test": "HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli local",
+    "test-xss": "HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli local xss",
+    "test-form": "HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli local form",
     "test-chromium": "HAIBUN_SPLIT_SHARED=a-browser=chromium haibun-cli local",
     "test-some": "HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=true HAIBUN_LOOPS=2 HAIBUN_MEMBERS=5 haibun-cli local",
     "test-many": "HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=true HAIBUN_LOOPS=5 HAIBUN_MEMBERS=50 haibun-cli local",
@@ -24,12 +24,14 @@
   "author": "vid",
   "license": "ISC",
   "dependencies": {
-    "@haibun/cli": "^1.1.4",
-    "@haibun/core": "^1.2.2",
-    "@haibun/domain-webpage": "^1.1.1",
-    "@haibun/out-xunit": "^1.0.0",
-    "@haibun/web-playwright": "^1.3.1",
-    "@haibun/web-server-express": "^1.1.1",
+    "@haibun/cli": "^1.9.3",
+    "@haibun/storage-fs": "^1.9.3",
+    "@haibun/domain-storage": "^1.9.3",
+    "@haibun/core": "^1.9.3",
+    "@haibun/domain-webpage": "^1.9.3",
+    "@haibun/out-xunit": "^1.9.3",
+    "@haibun/web-playwright": "^1.9.3",
+    "@haibun/web-server-express": "^1.9.3",
     "typescript": "^4.5.5"
   }
 }

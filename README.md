@@ -1,6 +1,6 @@
-# haibun-e2e
+# haibun-e2e-tests
 
-End to end / integration features with Haibun.
+End to end tests with Haibun.
 
 Use node version 14 (or later).
 
@@ -11,6 +11,8 @@ Use node version 14 (or later).
 `npm run build` to build
 
 `npm run test` to run all tests.
+
+`npm run test` to watch all tests.
 
 Features are in local/features/.
 
