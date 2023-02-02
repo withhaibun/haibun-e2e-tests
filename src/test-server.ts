@@ -1,10 +1,10 @@
 
 import fileUpload from 'express-fileupload';
 
-import { actionOK, getFromRuntime, sleep, } from '@haibun/core/build/lib/util/index.js';
+import { actionNotOK, actionOK, getFromRuntime, sleep, asError } from '@haibun/core/build/lib/util/index.js';
 
 import { IRequest, IResponse, IWebServer, TRequestHandler, WEBSERVER } from '@haibun/web-server-express/build/defs.js';
-import { AStepper, TNamed } from '@haibun/core/build/lib/defs.js';
+import { AStepper, TNamed, TVStep } from '@haibun/core/build/lib/defs.js';
 
 const TALLY = 'tally';
 
@@ -24,7 +24,7 @@ const TestRoute = class TestRoute extends AStepper {
         const uploaded = req.files.upload;
         if (uploaded !== undefined) {
             const file = <fileUpload.UploadedFile>uploaded;
-            const uploadPath = '/tmp/' + `upload-${Date.now()}.file.uploaded}`;
+            const uploadPath = `/tmp/upload-${Date.now()}.${file.name}.uploaded`;
             file.mv(uploadPath, function (err) {
                 if (err) {
                     return res.status(500).send(err);
@@ -37,20 +37,28 @@ const TestRoute = class TestRoute extends AStepper {
     steps = {
         addTallyRoute: {
             gwta: 'start tally route at {loc}',
-            action: async ({ loc }: TNamed) => {
+            action: async ({ loc }: TNamed, vstep: TVStep) => {
                 let webserver: IWebServer = getFromRuntime(this.getWorld().runtime, WEBSERVER);
 
-                await webserver.addRoute('get', loc!, this.tally);
+                try {
+                    webserver.addRoute('get', loc!, this.tally);
+                } catch (error) {
+                    return actionNotOK(vstep.in, { error: asError(error) });
+                }
                 return actionOK();
             },
         },
         addUploadRoute: {
             gwta: 'start upload route at {loc}',
-            action: async ({ loc }: TNamed) => {
-                let webserver: IWebServer = getFromRuntime(this.getWorld().runtime, WEBSERVER);
+            action: async ({ loc }: TNamed, vstep: TVStep) => {
+                const webserver: IWebServer = getFromRuntime(this.getWorld().runtime, WEBSERVER);
                 webserver.use(fileUpload());
 
-                await webserver.addRoute('post', loc!, this.upload);
+                try {
+                    webserver.addRoute('post', loc!, this.upload);
+                } catch (error) {
+                    return actionNotOK(vstep.in, { error: asError(error) });
+                }
                 return actionOK();
             },
         },

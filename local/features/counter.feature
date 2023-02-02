@@ -5,7 +5,7 @@ Feature: A form and counter
 
     When I have a valid random username <username>
 
-    Then serve files from test
+    Then serve files at /static from test
     And start tally route at /count
     Then show mounts
     
@@ -16,7 +16,6 @@ Feature: A form and counter
     Then the URI query parameter username is <username>
     Then save URI query parameter username to username parameter
     Then the URI should start with counter URI
-    Pause for 1000s
     And I should see <username>
     And I should see username parameter
     And the cookie userid should be <username>

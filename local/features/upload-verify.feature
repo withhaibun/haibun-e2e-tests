@@ -5,9 +5,9 @@ Feature: A form and counter
     Start upload route at "/upload"
     show mounts
 
-    Then serve files from test
+    Then serve files at /static from test
     
     On the form webpage
     Upload file "files/picture.jpg" using upload chooser
-    # Click the button Upload
+    Click the button Upload
     pause for 1000s
