@@ -1,13 +1,16 @@
 
 Feature: A form and counter
 
-    Backgrounds: service/local, int/upload-form
-    Start upload route at "/upload"
-    show mounts
-
-    Then serve files at /static from test
+Backgrounds: int/service/local, int/upload-form, int/service/upload
     
     On the form webpage
     Upload file "files/picture.jpg" using upload chooser
     Click the button Upload
-    pause for 1000s
+
+    Should see "Uploaded file"
+    Click on "Uploaded file"
+    Save download to "/tmp/test-downloaded.jpg"
+    Then "files/picture.jpg" is the same as "/tmp/test-downloaded.jpg"
+
+
+
