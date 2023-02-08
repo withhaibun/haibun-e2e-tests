@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "haibun-e2e-tests",
   "version": "1.10.0",
   "description": "e2e tests for haibun",
@@ -6,11 +7,12 @@
     "node": ">=14"
   },
   "scripts": {
-    "tsc-watch": "tsc --watch",
+    "build-watch": "tsc --watch",
     "build": "tsc",
     "test": "HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli local",
     "test-xss": "HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli local xss",
-    "test-form": "HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli local form",
+    "test-counter": "HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli local counter",
+    "test-upload": "HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=false haibun-cli local upload",
     "test-chromium": "HAIBUN_SPLIT_SHARED=a-browser=chromium haibun-cli local",
     "test-some": "HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=true HAIBUN_LOOPS=2 HAIBUN_MEMBERS=5 haibun-cli local",
     "test-many": "HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=true HAIBUN_LOOPS=5 HAIBUN_MEMBERS=50 haibun-cli local",
@@ -24,14 +26,20 @@
   "author": "vid",
   "license": "ISC",
   "dependencies": {
-    "@haibun/cli": "^1.9.3",
-    "@haibun/storage-fs": "^1.9.3",
-    "@haibun/domain-storage": "^1.9.3",
-    "@haibun/core": "^1.9.3",
-    "@haibun/domain-webpage": "^1.9.3",
-    "@haibun/out-xunit": "^1.9.3",
-    "@haibun/web-playwright": "^1.9.3",
-    "@haibun/web-server-express": "^1.9.3",
+    "@haibun/cli": "^1.20.0",
+    "@haibun/core": "^1.20.0",
+    "@haibun/domain-storage": "^1.20.0",
+    "@haibun/domain-webpage": "^1.20.0",
+    "@haibun/out-xunit": "^1.20.0",
+    "@haibun/storage-fs": "^1.20.0",
+    "@haibun/web-playwright": "^1.20.0",
+    "@haibun/web-server-express": "^1.20.0",
+    "@types/express-fileupload": "^1.4.1",
+    "express-fileupload": "^1.4.0",
     "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.16",
+    "@types/jest": "^29.4.0"
   }
 }

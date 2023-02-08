@@ -9,7 +9,7 @@
     "vars",
     "credentials",
     "haibun",
-    "./build/test-server.js"
+    "./build/test-server"
   ],
   "features": {}
 }

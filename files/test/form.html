@@ -1,4 +1,15 @@
+<h1>Login form</h1>
+
 <form method="get" action="/count">
     username <input type="text" name="username" />
     <input id="submit" type="submit" value="Submit" />
+</form>
+
+<hr />
+
+<h1>Upload form</h1>
+<form method="post" action="/upload" encType="multipart/form-data">
+    <label for="upload">upload</label> 
+        <input type="file" name="upload" id="upload-chooser" required="required" />
+    <button type="submit" value="Upload" id="upload-submit">Upload</button>
 </form>
