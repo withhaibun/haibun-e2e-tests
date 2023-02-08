@@ -1,5 +1,5 @@
 
-Feature: A form and counter
+Feature: Upload a file, then download it and verify it's the same file
 
 Backgrounds: int/service/local, int/upload-form, int/service/upload
     

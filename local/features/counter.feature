@@ -7,7 +7,6 @@ Feature: A form and counter
 
     Then serve files at /static from test
     And start tally route at /count
-    Then show mounts
     
     On the form webpage
     When I input <username> for input
