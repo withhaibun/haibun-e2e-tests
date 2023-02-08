@@ -1,3 +1,5 @@
+[![Haibun e2e tests](https://github.com/withhaibun/haibun-e2e-tests/actions/workflows/test.yml/badge.svg)](https://github.com/withhaibun/haibun-e2e-tests/actions/workflows/test.yml)
+
 # haibun-e2e-tests
 
 End to end tests with Haibun.
