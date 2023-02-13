@@ -2,11 +2,6 @@
 
 name: $(Build.DefinitionName).$(BuildID).$(Rev:.rr)
 
-resources:
- pipelines:
-   - pipeline: bdd-pipeline-test
-     source: sign-in-canada.azure-lab-pipeline
-
 pool:
   vmImage: 'ubuntu-latest'
 
@@ -22,13 +17,6 @@ steps:
 
 
 - script: |
-    CI=true npm run test-junit
+    CI=true npm run test
   displayName: 'Run tests'
 
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: JUnit
-    testResultsFiles: output/bdd-test-results.xml
-
-- script: |
-   ls output
