@@ -1,7 +1,3 @@
-# Codeceptjs based BDD testing
-
-name: $(Build.DefinitionName).$(BuildID).$(Rev:.rr)
-
 pool:
   vmImage: 'ubuntu-latest'
 
