@@ -16,6 +16,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    ls /tmp/
     npm ci
     npm run build
     HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=true npm run test
