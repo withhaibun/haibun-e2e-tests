@@ -1,7 +1,7 @@
 resources:
   pipelines:
   - pipeline: haibun
-    source: haibun
+    source: withhaibun.haibun
     trigger: true
 
 trigger:
