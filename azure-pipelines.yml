@@ -21,10 +21,9 @@ steps:
     npm run build
   displayName: 'npm install and build'
 - script: |
-    npm run test
     mkdir test
-    echo '<?xml version="1.0"?> <testsuites tests="1" name="Haibun-Junit" failures="0"> <testsuite name="Haibun-Junit-Suite" tests="1" skipped="0" failures="0"> <testcase name="/features/upload-verify.feature" id="/features/upload-verify.feature"/> </testsuite> </testsuites>' > test/0-result.xml
-
+    HAIBUN_O_WEB_PLAYWRIGHT_HEADLESS=true HAIBUN_OUTPUTAsJUnit HAIBUN_OUTPUT_LOCATION=test/ npm run test
+    
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
