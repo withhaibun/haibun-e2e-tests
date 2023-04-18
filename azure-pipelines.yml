@@ -1,3 +1,8 @@
+resources:
+  pipelines:
+  - pipeline: haibun
+    source: haibun
+    trigger: true
 
 trigger:
 - main
