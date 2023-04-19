@@ -13,8 +13,7 @@ const TestRoute = class TestRoute extends AStepper {
 
     async close() {
         if (Object.keys(this.toDelete).length > 0) {
-            this.getWorld().logger.log(`removing ${this.toDelete}`);
-            this.getWorld().logger.log(`removing ${this.toDelete}`);
+            this.getWorld().logger.log(`removing ${JSON.stringify(this.toDelete)}`);
             for (const td of Object.values(this.toDelete)) {
                 rmSync(td);
             }
@@ -52,7 +51,7 @@ const TestRoute = class TestRoute extends AStepper {
                     return res.status(500).send(err);
                 }
                 this.toDelete.uploaded = uploadPath;
-                
+
                 res.send('<a id="to-download" href="/download">Uploaded file</a>');
             });
         }
