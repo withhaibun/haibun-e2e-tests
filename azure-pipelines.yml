@@ -22,6 +22,7 @@ steps:
   displayName: 'npm install and build'
 - script: |
     mkdir test
+    mkdir /tmp
     HAIBUN_OUTPUT_DEST=test/result.xml HAIBUN_OUTPUT=~@haibun/out-xunit/build/out-xunit HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=true npm run test
     
 - task: PublishTestResults@2
