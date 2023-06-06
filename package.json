@@ -10,6 +10,7 @@
     "build-watch": "tsc --watch",
     "build": "tsc",
     "test": "HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true haibun-cli local",
+    "help": "HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true haibun-cli local --help",
     "test-xss": "HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true haibun-cli local xss",
     "test-counter": "HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true haibun-cli local counter",
     "test-upload": "HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true haibun-cli local upload",
