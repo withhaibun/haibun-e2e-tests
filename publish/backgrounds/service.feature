@@ -1,0 +1,1 @@
+set dashboard to http://localhost:8123/published
