@@ -8,7 +8,7 @@ Feature: A form and counter
     Then serve files at /static from test
     And start tally route at /count
     
-    On the form webpage
+    Go to the form webpage
     When I input <username> for user name
     And I click the button Submit
 

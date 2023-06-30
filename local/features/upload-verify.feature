@@ -3,7 +3,7 @@ Feature: Upload a file, then download it and verify it's the same file
 
 Backgrounds: int/service/local, int/upload-form, int/service/upload
     
-    On the form webpage
+    Go to the form webpage
     Upload file "files/picture.jpg" using upload chooser
     Click the button Upload
 
