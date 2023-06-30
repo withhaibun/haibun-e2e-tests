@@ -1,13 +1,13 @@
 
-Feature: A form and counter
+Feature: Check against URI xss exploit
 
     Backgrounds: service/xss
 
    Serve files from test
     Accept next dialog to clicked
-    On the xss webpage
+    go to the xss webpage
     Dialog "clicked" message not set
 
     Concat xss and ?;alert('hi') as exploit
-    On the exploit webpage
+    Go to the exploit webpage
     Dialog "clicked" message says "hi"
