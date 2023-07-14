@@ -16,17 +16,21 @@ Copy the reviews to the publish location.
     publish found reviews
     storage entry ./files/published/capture/default/__test/loop-1/seq-0/featn-1/mem-0/review.html exists
 
+Publish the reviews dashboard link.
+
+    publish reviews dashboard link
+    
+Verifies dashboard review links exist.
+
+    storage entry ./files/published/reviews/ exists
+    storage entry ./files/published/reviews/__test-review.json exists
+
 # Dashboard
 
 (Re-)create a page that finds all existing reviews and displays them, then verify it exists.
 
     create dashboard page
     storage entry ./files/published/index.html exists
-
-Verifies dashboard review links exist.
-
-    storage entry ./files/published/reviews/ exists
-    storage entry ./files/published/reviews/__test-review.json exists
 
 # Browser access
 

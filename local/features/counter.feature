@@ -1,11 +1,11 @@
 
 Feature: A form and counter
 
-    Backgrounds: service/local, int/counter
+    Backgrounds: service/counter, int/counter
 
     When I have a valid random username <username>
 
-    Then serve files at /static from test
+    Then serve files at /static from "counter"
     And start tally route at /count
     
     Go to the form webpage
