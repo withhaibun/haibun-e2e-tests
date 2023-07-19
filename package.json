@@ -2,6 +2,7 @@
   "type": "module",
   "name": "haibun-e2e-tests",
   "version": "1.28.21",
+  "main": "build/test-server.js",
   "description": "e2e tests for haibun",
   "engines": {
     "node": ">=14"
