@@ -23,7 +23,7 @@ Publish the reviews dashboard link.
 Verifies dashboard review links exist.
 
     storage entry ./files/published/reviews/ exists
-    storage entry ./files/published/reviews/__test-review.json exists
+    storage entry ./files/published/reviews/__test-reviews.json exists
 
 # Dashboard
 
@@ -49,16 +49,16 @@ Access the dashboard.
     go to the dashboard webpage
 
 It contains an indexes of found reviews. Select one.
-    see reviews list
-    click the link reviews 
+    See "Feature Result Index"
+    click "Feature Result Index"
 
 Now on an index of found reviews. Select one.
 
-    see review
+    see "local xss"
+    click by text "Check against URI xss exploit"
 
 Now on an individual review, with a timeline and video.
 
-    click the link review 
     see step-current
     see video
 
