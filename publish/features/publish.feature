@@ -49,7 +49,7 @@ Access the dashboard.
     go to the dashboard webpage
 
 It contains an indexes of found reviews. Select one.
-    See "Feature Result Index"
+#    See "Feature Result Index"
     click "Feature Result Index"
 
 Now on an index of found reviews. Select one.
