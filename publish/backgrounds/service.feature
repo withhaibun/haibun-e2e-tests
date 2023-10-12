@@ -1,3 +1,3 @@
-set dashboard to http://localhost:8123/published
-set reviews to http://localhost:8123/reviews
-set review link to __test-reviews.json
+set tracks to http://localhost:8123/tracks
+set dashboard to http://localhost:8123/dashboard.html
+set tracks history to __test-tracksHistory.json
