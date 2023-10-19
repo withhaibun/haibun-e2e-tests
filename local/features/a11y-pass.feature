@@ -1,4 +1,4 @@
-Feature: Test accessibility
+Feature: Test accessibility pass
 
 Backgrounds: int/a11y
     Serve files from "a11y"
