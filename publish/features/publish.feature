@@ -10,7 +10,7 @@ Create a history of all found reviews in the root directory, then verify it exis
 (Re-)create a page that finds all existing reviews and displays them, then verify it exists.
     create reviews pages
     storage entry ./files/published/dashboard.html exists
-    storage entry ./files/published/reviews.html exists
+    storage entry ./files/published/reviewer.html exists
 
 # Browser access
 
