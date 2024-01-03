@@ -1,4 +1,4 @@
-name: 'Haibun unit tests'
+name: 'Haibun e2e tests'
 
 on:
   workflow_dispatch:
