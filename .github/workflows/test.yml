@@ -24,6 +24,7 @@ jobs:
       - uses: actions/setup-node@v3.5.1
         with:
           node-version: 18
+          token: ${{ secrets.PAT }}
       - name: Install dependencies
         run: npm ci
       - name: playwright install
@@ -47,4 +48,3 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "update e2e test reviews"
-          token: ${{ secrets.PAT }}
