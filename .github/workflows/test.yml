@@ -23,16 +23,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: withhaibun/haibun-e2e-tests
-          ssh-strict: true
-          persist-credentials: true
-          clean: true
-          sparse-checkout-cone-mode: true
-          fetch-depth: 1
-          fetch-tags: false
-          lfs: false
-          submodules: false
-          set-safe-directory: true
-          token: ${{ secrets.haibune2eaction }}
+          token: ${{ secrets.wtw }}
 
       - uses: actions/setup-node@v3.5.1
         with:
