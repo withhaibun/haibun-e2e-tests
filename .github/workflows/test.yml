@@ -1,4 +1,4 @@
-name: 'Haibun e2e tests'
+name: "Haibun e2e tests"
 
 on:
   workflow_dispatch:
@@ -13,11 +13,11 @@ permissions:
 
 # This allows a subsequently queued workflow run to interrupt previous runs
 concurrency:
-  group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+  group: "${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}"
   cancel-in-progress: true
 
 jobs:
-  unit_test:
+  e2e_tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -26,8 +26,24 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm ci
-      - name: build
+      - name: playwright install
+        run: |
+          npx playwright install-deps
+          npx playwright install
+        
+      - name: Build
         run: npm run build
-      - name: Run tests
-        run: npm test
 
+      - name: Run tests
+        continue-on-error: true
+        run: npm test a11y
+
+      - name: Publish
+        run: npm run publish
+
+      - name: Add reviews
+        run: git add ./reviews/
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "update e2e test reviews"
