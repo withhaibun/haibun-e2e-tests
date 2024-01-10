@@ -2,6 +2,8 @@
 
 # haibun-e2e-tests
 
+See reviews [here](reviews/dashboard.html)
+
 End to end tests with Haibun.
 
 Use node version 14 (or later).
