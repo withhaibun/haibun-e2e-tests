@@ -24,7 +24,7 @@ jobs:
       - uses: actions/setup-node@v3.5.1
         with:
           repository: withhaibun/haibun-e2e-tests
-          token: ${{ secrets.wtw2 }}
+          token: ${{ secrets.wtw }}
           node-version: 18
 
       - name: Install dependencies
