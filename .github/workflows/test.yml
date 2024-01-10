@@ -21,12 +21,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3.5.1
         with:
           repository: withhaibun/haibun-e2e-tests
           token: ${{ secrets.wtw }}
-
-      - uses: actions/setup-node@v3.5.1
-        with:
           node-version: 18
 
       - name: Install dependencies
