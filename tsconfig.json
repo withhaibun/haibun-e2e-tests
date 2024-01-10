@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./build",
+    "outDir": "./build-local",
     "rootDir": "./src",
     "target": "esnext",
     "module": "NodeNext",

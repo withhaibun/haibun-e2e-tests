@@ -11,7 +11,7 @@
     "vars",
     "credentials",
     "haibun",
-    "./build/test-server"
+    "./build-local/test-server"
   ],
   "features": {}
 }
