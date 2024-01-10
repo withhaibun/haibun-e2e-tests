@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          token: ${{ secrets.haibun-e2e-checkout }}
+          token: ${{ secrets.haibun-e2e-action }}
 
       - uses: actions/setup-node@v3.5.1
         with:
