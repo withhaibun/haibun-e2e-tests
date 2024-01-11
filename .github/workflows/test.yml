@@ -29,11 +29,6 @@ jobs:
           node-version: 18
           ref: gh-pages
 
-      - name: Set up GitHub Actions bot identity
-        run: |
-          git config user.name "github-actions[pat]"
-          git config user.email "vid_github@zooid.org"
-
       - name: Merge main branch
         run: |
           git fetch origin main
