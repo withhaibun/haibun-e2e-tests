@@ -26,6 +26,12 @@ jobs:
           repository: withhaibun/haibun-e2e-tests
           token: ${{ secrets.PAT_HE2E }}
           node-version: 18
+          ref: gh-pages
+
+      - name: Merge main branch
+        run: |
+          git fetch origin main
+          git merge origin/main
 
       - name: Install dependencies
         run: npm ci
