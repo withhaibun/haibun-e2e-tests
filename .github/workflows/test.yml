@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v3.5.1
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
       - uses: fregante/setup-git-user@v2
         with:
           repository: withhaibun/haibun-e2e-tests
