@@ -22,11 +22,17 @@ jobs:
     steps:
       - uses: actions/setup-node@v3.5.1
       - uses: actions/checkout@v4
+      - uses: fregante/setup-git-user@v2
         with:
           repository: withhaibun/haibun-e2e-tests
           token: ${{ secrets.PAT_HE2E }}
           node-version: 18
           ref: gh-pages
+
+      - name: Set up GitHub Actions bot identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Merge main branch
         run: |
