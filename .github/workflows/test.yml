@@ -21,18 +21,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v3.5.1
-      - uses: actions/checkout@v3
-      - uses: fregante/setup-git-user@v2
+      - uses: actions/checkout@v4
+      # - uses: fregante/setup-git-user@v2
         with:
           repository: withhaibun/haibun-e2e-tests
           token: ${{ secrets.PAT_HE2E }}
           node-version: 18
           ref: gh-pages
 
-      # - name: Set up GitHub Actions bot identity
-      #   run: |
-      #     git config user.name "github-actions[pat]"
-      #     git config user.email "vid_github@zooid.org"
+      - name: Set up GitHub Actions bot identity
+        run: |
+          git config user.name "github-actions[pat]"
+          git config user.email "vid_github@zooid.org"
 
       - name: Merge main branch
         run: |
