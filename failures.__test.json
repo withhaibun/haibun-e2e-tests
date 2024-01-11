@@ -16,8 +16,8 @@
                   {
                     "ok": true,
                     "name": "feature",
-                    "start": 0.317269623,
-                    "end": 0.317381672
+                    "start": 0.31848836,
+                    "end": 0.318597083
                   }
                 ],
                 "seq": 1
@@ -30,8 +30,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 0.320032018,
-                    "end": 0.320093533
+                    "start": 0.319361519,
+                    "end": 0.319416952
                   }
                 ],
                 "seq": 2
@@ -44,8 +44,8 @@
                   {
                     "ok": true,
                     "name": "set",
-                    "start": 0.320713362,
-                    "end": 0.320801086
+                    "start": 0.320194363,
+                    "end": 0.320290251
                   }
                 ],
                 "seq": 3
@@ -58,8 +58,8 @@
                   {
                     "ok": true,
                     "name": "serveFiles",
-                    "start": 0.321347317,
-                    "end": 0.326286743
+                    "start": 0.32098118,
+                    "end": 0.326183224
                   }
                 ],
                 "seq": 4
@@ -72,8 +72,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 0.326852781,
-                    "end": 0.326881966
+                    "start": 0.326920409,
+                    "end": 0.326941549
                   }
                 ],
                 "seq": 5
@@ -86,8 +86,8 @@
                   {
                     "ok": true,
                     "name": "gotoPage",
-                    "start": 0.327425432,
-                    "end": 1.8846044480000002
+                    "start": 0.327663716,
+                    "end": 0.680806744
                   }
                 ],
                 "seq": 6
@@ -100,8 +100,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 1.885267066,
-                    "end": 1.8853079529999999
+                    "start": 0.681788405,
+                    "end": 0.681825644
                   }
                 ],
                 "seq": 7
@@ -114,8 +114,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 1.885972706,
-                    "end": 1.885994276
+                    "start": 0.68266464,
+                    "end": 0.682680489
                   }
                 ],
                 "seq": 8
@@ -128,8 +128,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 1.886665411,
-                    "end": 1.8866835549999998
+                    "start": 0.683613199,
+                    "end": 0.683636282
                   }
                 ],
                 "seq": 9
@@ -163,7 +163,7 @@
                               "orientationAngle": 0,
                               "orientationType": "landscape-primary"
                             },
-                            "timestamp": "2024-01-11T15:39:26.088Z",
+                            "timestamp": "2024-01-11T15:40:23.428Z",
                             "url": "http://localhost:8123/a11y.html",
                             "toolOptions": {
                               "reporter": "v1"
@@ -2098,7 +2098,7 @@
                               "orientationAngle": 0,
                               "orientationType": "landscape-primary"
                             },
-                            "timestamp": "2024-01-11T15:39:26.088Z",
+                            "timestamp": "2024-01-11T15:40:23.428Z",
                             "url": "http://localhost:8123/a11y.html",
                             "toolOptions": {
                               "reporter": "v1"
@@ -4015,8 +4015,8 @@
                       }
                     },
                     "name": "checkA11yRuntime",
-                    "start": 1.88736023,
-                    "end": 2.075664687
+                    "start": 0.68462158,
+                    "end": 0.872330258
                   }
                 ],
                 "seq": 10
@@ -4035,8 +4035,8 @@
                   {
                     "ok": true,
                     "name": "feature",
-                    "start": 2.199887908,
-                    "end": 2.199925598
+                    "start": 0.990078804,
+                    "end": 0.99012508
                   }
                 ],
                 "seq": 1
@@ -4049,8 +4049,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 2.200439948,
-                    "end": 2.200459896
+                    "start": 0.990779521,
+                    "end": 0.990804127
                   }
                 ],
                 "seq": 2
@@ -4063,8 +4063,8 @@
                   {
                     "ok": true,
                     "name": "set",
-                    "start": 2.200958186,
-                    "end": 2.201087757
+                    "start": 0.991434653,
+                    "end": 0.991566659
                   }
                 ],
                 "seq": 3
@@ -4077,8 +4077,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 2.201569387,
-                    "end": 2.201584825
+                    "start": 0.992153484,
+                    "end": 0.992174653
                   }
                 ],
                 "seq": 4
@@ -4091,8 +4091,8 @@
                   {
                     "ok": true,
                     "name": "serveFiles",
-                    "start": 2.202063609,
-                    "end": 2.203150999
+                    "start": 0.992806302,
+                    "end": 0.994046806
                   }
                 ],
                 "seq": 5
@@ -4105,8 +4105,8 @@
                   {
                     "ok": true,
                     "name": "gotoPage",
-                    "start": 2.203701336,
-                    "end": 2.25202793
+                    "start": 0.994725351,
+                    "end": 1.044003363
                   }
                 ],
                 "seq": 6
@@ -4119,8 +4119,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 2.252796164,
-                    "end": 2.252829296
+                    "start": 1.044860793,
+                    "end": 1.044890088
                   }
                 ],
                 "seq": 7
@@ -4133,8 +4133,8 @@
                   {
                     "ok": true,
                     "name": "checkA11yRuntime",
-                    "start": 2.253476624,
-                    "end": 2.419666316
+                    "start": 1.04556153,
+                    "end": 1.218531455
                   }
                 ],
                 "seq": 8
@@ -4147,8 +4147,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 2.420190925,
-                    "end": 2.420212516
+                    "start": 1.219277517,
+                    "end": 1.2193152170000001
                   }
                 ],
                 "seq": 9
@@ -4161,8 +4161,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 2.420723499,
-                    "end": 2.420736063
+                    "start": 1.220089331,
+                    "end": 1.22011002
                   }
                 ],
                 "seq": 10
@@ -4230,8 +4230,8 @@
                   {
                     "ok": true,
                     "name": "feature",
-                    "start": 0.317269623,
-                    "end": 0.317381672
+                    "start": 0.31848836,
+                    "end": 0.318597083
                   }
                 ],
                 "seq": 1
@@ -4244,8 +4244,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 0.320032018,
-                    "end": 0.320093533
+                    "start": 0.319361519,
+                    "end": 0.319416952
                   }
                 ],
                 "seq": 2
@@ -4258,8 +4258,8 @@
                   {
                     "ok": true,
                     "name": "set",
-                    "start": 0.320713362,
-                    "end": 0.320801086
+                    "start": 0.320194363,
+                    "end": 0.320290251
                   }
                 ],
                 "seq": 3
@@ -4272,8 +4272,8 @@
                   {
                     "ok": true,
                     "name": "serveFiles",
-                    "start": 0.321347317,
-                    "end": 0.326286743
+                    "start": 0.32098118,
+                    "end": 0.326183224
                   }
                 ],
                 "seq": 4
@@ -4286,8 +4286,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 0.326852781,
-                    "end": 0.326881966
+                    "start": 0.326920409,
+                    "end": 0.326941549
                   }
                 ],
                 "seq": 5
@@ -4300,8 +4300,8 @@
                   {
                     "ok": true,
                     "name": "gotoPage",
-                    "start": 0.327425432,
-                    "end": 1.8846044480000002
+                    "start": 0.327663716,
+                    "end": 0.680806744
                   }
                 ],
                 "seq": 6
@@ -4314,8 +4314,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 1.885267066,
-                    "end": 1.8853079529999999
+                    "start": 0.681788405,
+                    "end": 0.681825644
                   }
                 ],
                 "seq": 7
@@ -4328,8 +4328,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 1.885972706,
-                    "end": 1.885994276
+                    "start": 0.68266464,
+                    "end": 0.682680489
                   }
                 ],
                 "seq": 8
@@ -4342,8 +4342,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 1.886665411,
-                    "end": 1.8866835549999998
+                    "start": 0.683613199,
+                    "end": 0.683636282
                   }
                 ],
                 "seq": 9
@@ -4377,7 +4377,7 @@
                               "orientationAngle": 0,
                               "orientationType": "landscape-primary"
                             },
-                            "timestamp": "2024-01-11T15:39:26.088Z",
+                            "timestamp": "2024-01-11T15:40:23.428Z",
                             "url": "http://localhost:8123/a11y.html",
                             "toolOptions": {
                               "reporter": "v1"
@@ -6312,7 +6312,7 @@
                               "orientationAngle": 0,
                               "orientationType": "landscape-primary"
                             },
-                            "timestamp": "2024-01-11T15:39:26.088Z",
+                            "timestamp": "2024-01-11T15:40:23.428Z",
                             "url": "http://localhost:8123/a11y.html",
                             "toolOptions": {
                               "reporter": "v1"
@@ -8229,8 +8229,8 @@
                       }
                     },
                     "name": "checkA11yRuntime",
-                    "start": 1.88736023,
-                    "end": 2.075664687
+                    "start": 0.68462158,
+                    "end": 0.872330258
                   }
                 ],
                 "seq": 10
@@ -8249,8 +8249,8 @@
                   {
                     "ok": true,
                     "name": "feature",
-                    "start": 2.199887908,
-                    "end": 2.199925598
+                    "start": 0.990078804,
+                    "end": 0.99012508
                   }
                 ],
                 "seq": 1
@@ -8263,8 +8263,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 2.200439948,
-                    "end": 2.200459896
+                    "start": 0.990779521,
+                    "end": 0.990804127
                   }
                 ],
                 "seq": 2
@@ -8277,8 +8277,8 @@
                   {
                     "ok": true,
                     "name": "set",
-                    "start": 2.200958186,
-                    "end": 2.201087757
+                    "start": 0.991434653,
+                    "end": 0.991566659
                   }
                 ],
                 "seq": 3
@@ -8291,8 +8291,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 2.201569387,
-                    "end": 2.201584825
+                    "start": 0.992153484,
+                    "end": 0.992174653
                   }
                 ],
                 "seq": 4
@@ -8305,8 +8305,8 @@
                   {
                     "ok": true,
                     "name": "serveFiles",
-                    "start": 2.202063609,
-                    "end": 2.203150999
+                    "start": 0.992806302,
+                    "end": 0.994046806
                   }
                 ],
                 "seq": 5
@@ -8319,8 +8319,8 @@
                   {
                     "ok": true,
                     "name": "gotoPage",
-                    "start": 2.203701336,
-                    "end": 2.25202793
+                    "start": 0.994725351,
+                    "end": 1.044003363
                   }
                 ],
                 "seq": 6
@@ -8333,8 +8333,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 2.252796164,
-                    "end": 2.252829296
+                    "start": 1.044860793,
+                    "end": 1.044890088
                   }
                 ],
                 "seq": 7
@@ -8347,8 +8347,8 @@
                   {
                     "ok": true,
                     "name": "checkA11yRuntime",
-                    "start": 2.253476624,
-                    "end": 2.419666316
+                    "start": 1.04556153,
+                    "end": 1.218531455
                   }
                 ],
                 "seq": 8
@@ -8361,8 +8361,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 2.420190925,
-                    "end": 2.420212516
+                    "start": 1.219277517,
+                    "end": 1.2193152170000001
                   }
                 ],
                 "seq": 9
@@ -8375,8 +8375,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 2.420723499,
-                    "end": 2.420736063
+                    "start": 1.220089331,
+                    "end": 1.22011002
                   }
                 ],
                 "seq": 10
@@ -8434,9 +8434,9 @@
         },
         "trace": true
       },
-      "runStart": 133,
-      "runDuration": 2,
-      "fromStart": 2.460193931
+      "runStart": 232,
+      "runDuration": 1,
+      "fromStart": 1.264275566
     }
   ]
 }
