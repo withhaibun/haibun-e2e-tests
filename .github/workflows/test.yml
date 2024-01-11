@@ -36,7 +36,7 @@ jobs:
       - name: Merge main branch
         run: |
           git fetch origin main
-          git merge origin/main --allow-unrelated-histories
+          git merge origin/main --allow-unrelated-histories --force
 
       - name: Install dependencies
         run: npm ci
