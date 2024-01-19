@@ -11,3 +11,7 @@ Create a history of all found reviews in the root directory.
 
 Create the pre-populated function for the dashboard to index tracks.
     create indexer from tracks
+
+Only keep last couple reviews.
+
+   clear reviews past 3
