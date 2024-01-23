@@ -1,24 +1,42 @@
 /**
  * Bundle of haibun-reviews-dashboard
- * Generated: 2024-01-12
- * Version: 1.33.4
+ * Generated: 2024-01-23
+ * Version: 1.33.6
  * Dependencies:
+ *
+ * @haibun/core -- 1.32.9
  */
 
 import { endpoint } from './indexer.js';
 
+var HANDLER_USAGE;
+(function (HANDLER_USAGE) {
+    HANDLER_USAGE["EXCLUSIVE"] = "exclusive";
+    HANDLER_USAGE["FALLBACK"] = "fallback";
+})(HANDLER_USAGE || (HANDLER_USAGE = {}));
+const BASE_DOMAINS = [{ name: 'string', resolve: (inp) => inp }];
+BASE_DOMAINS.map((b) => b.name);
+
+const TRACKS_FILE = `tracks.json`;
+
 class DataAccess {
     latest = [];
     async getLatest() {
-        if (this.latest.length > 0) {
-            return this.latest;
+        try {
+            if (this.latest.length > 0) {
+                return this.latest;
+            }
+            const indexer = await import('./indexer.js');
+            return await indexer.getPublishedReviews();
         }
-        const indexer = await import('./indexer.js');
-        return await indexer.getPublishedReviews();
+        catch (e) {
+            console.error(e);
+            throw Error(`Failed to get latest reviews: ${e.message}`);
+        }
     }
     async getTracksHistories() {
         const links = await this.getLatest();
-        const historyFiles = links.filter(link => link.endsWith('-tracksHistory.json'));
+        const historyFiles = links.filter(link => link.endsWith(TRACKS_FILE));
         if (!historyFiles) {
             return [];
         }

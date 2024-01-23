@@ -1,8 +1,10 @@
 /**
  * Bundle of haibun-reviews-dashboard
- * Generated: 2024-01-12
- * Version: 1.33.4
+ * Generated: 2024-01-23
+ * Version: 1.33.6
  * Dependencies:
+ *
+ * @haibun/core -- 1.32.9
  *
  * tslib -- 2.6.2
  *
@@ -13,8 +15,6 @@
  * lit-element -- 4.0.2
  *
  * @alenaksu/json-viewer -- 2.0.1
- *
- * @haibun/core -- 1.32.9
  */
 
 /******************************************************************************
