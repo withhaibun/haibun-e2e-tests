@@ -41,7 +41,7 @@
     "@haibun/core": "1.34.0",
     "@haibun/domain-storage": "1.34.0",
     "@haibun/domain-webpage": "1.34.0",
-    "@haibun/out-review": "1.34.1",
+    "@haibun/out-review": "1.34.5",
     "@haibun/out-xunit": "1.34.0",
     "@haibun/storage-fs": "1.34.0",
     "@haibun/web-accessibility-axe": "1.33.6",
