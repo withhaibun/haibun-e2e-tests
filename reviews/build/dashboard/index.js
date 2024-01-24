@@ -1,23 +1,23 @@
 /**
  * Bundle of haibun-reviews-dashboard
- * Generated: 2024-01-23
- * Version: 1.33.6
+ * Generated: 2024-01-24
+ * Version: 1.34.2
  * Dependencies:
  *
  * @haibun/core -- 1.32.9
+ *
+ * tslib -- 2.6.2
+ *
+ * @lit/reactive-element -- 2.0.2
+ *
+ * lit-html -- 3.1.0
+ *
+ * lit-element -- 4.0.2
+ *
+ * @alenaksu/json-viewer -- 2.0.1
  */
 
 import { endpoint } from './indexer.js';
-
-var HANDLER_USAGE;
-(function (HANDLER_USAGE) {
-    HANDLER_USAGE["EXCLUSIVE"] = "exclusive";
-    HANDLER_USAGE["FALLBACK"] = "fallback";
-})(HANDLER_USAGE || (HANDLER_USAGE = {}));
-const BASE_DOMAINS = [{ name: 'string', resolve: (inp) => inp }];
-BASE_DOMAINS.map((b) => b.name);
-
-const TRACKS_FILE = `tracks.json`;
 
 class DataAccess {
     latest = [];
@@ -35,15 +35,20 @@ class DataAccess {
         }
     }
     async getTracksHistories() {
-        const links = await this.getLatest();
-        const historyFiles = links.filter(link => link.endsWith(TRACKS_FILE));
+        const historyFiles = await this.getLatest();
         if (!historyFiles) {
             return [];
         }
         const foundHistories = [];
         for (const source of historyFiles) {
-            const summary = await summarize(source);
-            foundHistories.push(summary);
+            try {
+                const summary = await summarize(source);
+                foundHistories.push(summary);
+            }
+            catch (e) {
+                console.error('summarize', source, e);
+                throw Error(`Failed to summarize ${source}: ${e.message}. Check the console for a stack trace.`);
+            }
         }
         return foundHistories;
     }
