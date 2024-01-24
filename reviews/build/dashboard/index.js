@@ -1,8 +1,20 @@
 /**
  * Bundle of haibun-reviews-dashboard
- * Generated: 2024-01-12
- * Version: 1.33.4
+ * Generated: 2024-01-24
+ * Version: 1.34.2
  * Dependencies:
+ *
+ * @haibun/core -- 1.32.9
+ *
+ * tslib -- 2.6.2
+ *
+ * @lit/reactive-element -- 2.0.2
+ *
+ * lit-html -- 3.1.0
+ *
+ * lit-element -- 4.0.2
+ *
+ * @alenaksu/json-viewer -- 2.0.1
  */
 
 import { endpoint } from './indexer.js';
@@ -10,22 +22,33 @@ import { endpoint } from './indexer.js';
 class DataAccess {
     latest = [];
     async getLatest() {
-        if (this.latest.length > 0) {
-            return this.latest;
+        try {
+            if (this.latest.length > 0) {
+                return this.latest;
+            }
+            const indexer = await import('./indexer.js');
+            return await indexer.getPublishedReviews();
         }
-        const indexer = await import('./indexer.js');
-        return await indexer.getPublishedReviews();
+        catch (e) {
+            console.error(e);
+            throw Error(`Failed to get latest reviews: ${e.message}`);
+        }
     }
     async getTracksHistories() {
-        const links = await this.getLatest();
-        const historyFiles = links.filter(link => link.endsWith('-tracksHistory.json'));
+        const historyFiles = await this.getLatest();
         if (!historyFiles) {
             return [];
         }
         const foundHistories = [];
         for (const source of historyFiles) {
-            const summary = await summarize(source);
-            foundHistories.push(summary);
+            try {
+                const summary = await summarize(source);
+                foundHistories.push(summary);
+            }
+            catch (e) {
+                console.error('summarize', source, e);
+                throw Error(`Failed to summarize ${source}: ${e.message}. Check the console for a stack trace.`);
+            }
         }
         return foundHistories;
     }
