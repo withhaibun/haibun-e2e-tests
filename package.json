@@ -17,7 +17,7 @@
   "scripts": {
     "build-watch": "tsc --watch",
     "build": "tsc",
-    "test": "HAIBUN_O_A11YSTEPPER_STORAGE=StorageFS HAIBUN_O_OUTREVIEWS_STORAGE=StorageFS HAIBUN_KEY=__test HAIBUN_TRACE=true HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true haibun-cli local",
+    "test": "HAIBUN_O_A11YSTEPPER_STORAGE=StorageFS HAIBUN_O_OUTREVIEWS_STORAGE=StorageFS HAIBUN_KEY=test HAIBUN_TRACE=true HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true haibun-cli local",
     "help": "npm run test -- --help",
     "test-xss": "npm run test -- xss",
     "test-counter": "npm run test -- counter",
@@ -31,7 +31,7 @@
     "test-envc": "HAIBUN_ENVC=what=what1,what=what2,also=also1,also=also2 haibun-cli envc",
     "test-envc-10": "HAIBUN_LOOPS=2 HAIBUN_MEMBERS=5 HAIBUN_ENVC=what=what1,what=what2,also=also1,also=also2 haibun-cli envc",
     "publish": "HAIBUN_O_OUTREVIEWS_PUBLISH_ROOT=./reviews HAIBUN_O_OUTREVIEWS_STORAGE=StorageFS HAIBUN_O_OUTREVIEWS_PUBLISH_STORAGE=StorageFS haibun-cli --config publish/local publish",
-    "complete": "HAIBUN_TRACE=true HAIBUN_KEY=__test npm run test && npm run publish"
+    "complete": "HAIBUN_TRACE=true HAIBUN_KEY=test npm run test && npm run publish"
   },
   "keywords": [],
   "author": "vid",
