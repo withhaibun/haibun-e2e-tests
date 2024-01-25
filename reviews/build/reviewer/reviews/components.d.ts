@@ -1,5 +1,5 @@
 import { LitElement, TemplateResult } from 'lit';
-import '@alenaksu/json-viewer';
+import './json-view-clipboard.js';
 import { TFoundHistories } from '@haibun/core/build/lib/LogHistory.js';
 import { THistoryWithMeta, TLogHistoryWithArtifact, TLogHistory, TArtifactMessageContext } from '@haibun/core/build/lib/interfaces/logger.js';
 export declare class ReviewsGroups extends LitElement {

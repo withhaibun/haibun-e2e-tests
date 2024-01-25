@@ -1,20 +1,8 @@
 /**
  * Bundle of haibun-reviews-dashboard
  * Generated: 2024-01-24
- * Version: 1.34.2
+ * Version: 1.34.5
  * Dependencies:
- *
- * @haibun/core -- 1.32.9
- *
- * tslib -- 2.6.2
- *
- * @lit/reactive-element -- 2.0.2
- *
- * lit-html -- 3.1.0
- *
- * lit-element -- 4.0.2
- *
- * @alenaksu/json-viewer -- 2.0.1
  */
 
 import { endpoint } from './indexer.js';
