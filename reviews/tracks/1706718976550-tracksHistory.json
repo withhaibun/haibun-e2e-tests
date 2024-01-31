@@ -1,18 +1,18 @@
 {
-  "$schema": "https://raw.githubusercontent.com/withhaibun/schemas/main/schemas/FoundHistories.json#1.35.0",
+  "$schema": "https://raw.githubusercontent.com/withhaibun/schemas/main/schemas/FoundHistories.json#1.35.5",
   "meta": {
-    "date": 1706563270288,
+    "date": 1706718976600,
     "ok": 1,
     "fail": 1
   },
   "histories": {
     "capture/default/test/loop-1/seq-0/featn-1/mem-0/tracks/tracksHistory.json": {
-      "$schema": "https://raw.githubusercontent.com/withhaibun/schemas/main/schemas/HistoryWithMeta.json#1.35.0",
+      "$schema": "https://raw.githubusercontent.com/withhaibun/schemas/main/schemas/HistoryWithMeta.json#1.35.5",
       "meta": {
-        "startTime": "2024-01-29T21:21:08.380Z",
+        "startTime": "2024-01-31T16:36:14.883Z",
         "description": "local a11y",
         "feature": "Test accessibility failure",
-        "startOffset": 0.494490212,
+        "startOffset": 0.335338338,
         "ok": false
       },
       "logHistory": [
@@ -91,8 +91,8 @@
                   {
                     "ok": true,
                     "name": "feature",
-                    "start": 0.499616347,
-                    "end": 0.499714696
+                    "start": 0.339227225,
+                    "end": 0.339350826
                   }
                 ],
                 "seq": 1
@@ -173,8 +173,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 0.500505471,
-                    "end": 0.500562982
+                    "start": 0.340136624,
+                    "end": 0.340197047
                   }
                 ],
                 "seq": 2
@@ -252,8 +252,8 @@
                   {
                     "ok": true,
                     "name": "set",
-                    "start": 0.501309882,
-                    "end": 0.501485521
+                    "start": 0.34100161,
+                    "end": 0.341105825
                   }
                 ],
                 "seq": 3
@@ -408,8 +408,8 @@
                   {
                     "ok": true,
                     "name": "serveFiles",
-                    "start": 0.502226309,
-                    "end": 0.507814565
+                    "start": 0.341799732,
+                    "end": 0.347127196
                   }
                 ],
                 "seq": 4
@@ -496,8 +496,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 0.508547278,
-                    "end": 0.508573379
+                    "start": 0.347804321,
+                    "end": 0.347827645
                   }
                 ],
                 "seq": 5
@@ -749,10 +749,10 @@
                   "connection": "keep-alive",
                   "content-length": "296",
                   "content-type": "text/html; charset=UTF-8",
-                  "date": "Mon, 29 Jan 2024 21:21:09 GMT",
-                  "etag": "W/\"128-18d5716f55b\"",
+                  "date": "Wed, 31 Jan 2024 16:36:15 GMT",
+                  "etag": "W/\"128-18d60600faa\"",
                   "keep-alive": "timeout=5",
-                  "last-modified": "Mon, 29 Jan 2024 21:18:58 GMT"
+                  "last-modified": "Wed, 31 Jan 2024 16:35:24 GMT"
                 }
               },
               "type": "json/playwright/trace"
@@ -788,8 +788,8 @@
                   {
                     "ok": true,
                     "name": "gotoPage",
-                    "start": 0.509250805,
-                    "end": 0.87924778
+                    "start": 0.348623863,
+                    "end": 0.697533206
                   }
                 ],
                 "seq": 6
@@ -876,8 +876,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 0.880302075,
-                    "end": 0.880346989
+                    "start": 0.698640104,
+                    "end": 0.69868042
                   }
                 ],
                 "seq": 7
@@ -955,8 +955,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 0.881178867,
-                    "end": 0.881195648
+                    "start": 0.69970259,
+                    "end": 0.699725893
                   }
                 ],
                 "seq": 8
@@ -1034,8 +1034,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 0.88198108,
-                    "end": 0.881995797
+                    "start": 0.700606258,
+                    "end": 0.700627849
                   }
                 ],
                 "seq": 9
@@ -1162,7 +1162,7 @@
           },
           "message": "not acceptable",
           "level": "error",
-          "caller": "a11y-axe-stepper:77:30"
+          "caller": "a11y-axe-stepper:63:30"
         },
         {
           "messageContext": {
@@ -1206,7 +1206,7 @@
             },
             "artifact": {
               "type": "picture",
-              "path": "./tracks/./capture/default/test/loop-1/seq-0/featn-1/mem-0/screenshot failure/failure-1706563269455.png"
+              "path": "./tracks/default/test/loop-1/seq-0/featn-1/mem-0/image/failure-1706718975780.png"
             },
             "tag": {
               "key": "test",
@@ -1225,7 +1225,7 @@
           },
           "message": "screenshot",
           "level": "info",
-          "caller": "web-playwright:648:28"
+          "caller": "web-playwright:649:28"
         },
         {
           "messageContext": {
@@ -1282,7 +1282,7 @@
                               "orientationAngle": 0,
                               "orientationType": "landscape-primary"
                             },
-                            "timestamp": "2024-01-29T21:21:09.422Z",
+                            "timestamp": "2024-01-31T16:36:15.741Z",
                             "url": "http://localhost:8123/a11y.html",
                             "toolOptions": {
                               "reporter": "v1"
@@ -3198,8 +3198,8 @@
                       }
                     },
                     "name": "checkA11yRuntime",
-                    "start": 0.882788051,
-                    "end": 1.0745367319999999
+                    "start": 0.701620363,
+                    "end": 0.897002771
                   }
                 ],
                 "seq": 10
@@ -3283,7 +3283,7 @@
           "messageContext": {
             "artifact": {
               "type": "video",
-              "path": "./tracks/default/test/loop-1/seq-0/featn-1/mem-0/video/7a42558db68f9d336b695a9b8c6c9b51.webm"
+              "path": "./tracks/default/test/loop-1/seq-0/featn-1/mem-0/video/5a1c943fbaf8522589cf642524afe33c.webm"
             },
             "topic": {
               "event": "summary",
@@ -3306,7 +3306,7 @@
           },
           "message": "endFeature video",
           "level": "info",
-          "caller": "web-playwright:149:32"
+          "caller": "web-playwright:150:32"
         },
         {
           "messageContext": {
@@ -3416,12 +3416,12 @@
       ]
     },
     "capture/default/test/loop-1/seq-0/featn-2/mem-0/tracks/tracksHistory.json": {
-      "$schema": "https://raw.githubusercontent.com/withhaibun/schemas/main/schemas/HistoryWithMeta.json#1.35.0",
+      "$schema": "https://raw.githubusercontent.com/withhaibun/schemas/main/schemas/HistoryWithMeta.json#1.35.5",
       "meta": {
-        "startTime": "2024-01-29T21:21:08.380Z",
+        "startTime": "2024-01-31T16:36:14.883Z",
         "description": "local a11y",
         "feature": "Test accessibility pass",
-        "startOffset": 1.17831989,
+        "startOffset": 1.020945012,
         "ok": true
       },
       "logHistory": [
@@ -3479,8 +3479,8 @@
                   {
                     "ok": true,
                     "name": "feature",
-                    "start": 1.179679157,
-                    "end": 1.179729371
+                    "start": 1.022291277,
+                    "end": 1.02233553
                   }
                 ],
                 "seq": 1
@@ -3561,8 +3561,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 1.180360613,
-                    "end": 1.180387043
+                    "start": 1.022851604,
+                    "end": 1.02287568
                   }
                 ],
                 "seq": 2
@@ -3640,8 +3640,8 @@
                   {
                     "ok": true,
                     "name": "set",
-                    "start": 1.181018836,
-                    "end": 1.181182192
+                    "start": 1.02337377,
+                    "end": 1.023505777
                   }
                 ],
                 "seq": 3
@@ -3733,8 +3733,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 1.181765094,
-                    "end": 1.181794189
+                    "start": 1.024003847,
+                    "end": 1.02402137
                   }
                 ],
                 "seq": 4
@@ -3875,8 +3875,8 @@
                   {
                     "ok": true,
                     "name": "serveFiles",
-                    "start": 1.182445108,
-                    "end": 1.183707603
+                    "start": 1.02451345,
+                    "end": 1.025611642
                   }
                 ],
                 "seq": 5
@@ -4116,10 +4116,10 @@
                   "connection": "keep-alive",
                   "content-length": "296",
                   "content-type": "text/html; charset=UTF-8",
-                  "date": "Mon, 29 Jan 2024 21:21:09 GMT",
-                  "etag": "W/\"128-18d5716f55b\"",
+                  "date": "Wed, 31 Jan 2024 16:36:15 GMT",
+                  "etag": "W/\"128-18d60600faa\"",
                   "keep-alive": "timeout=5",
-                  "last-modified": "Mon, 29 Jan 2024 21:18:58 GMT"
+                  "last-modified": "Wed, 31 Jan 2024 16:35:24 GMT"
                 }
               },
               "type": "json/playwright/trace"
@@ -4155,8 +4155,8 @@
                   {
                     "ok": true,
                     "name": "gotoPage",
-                    "start": 1.184353272,
-                    "end": 1.239555676
+                    "start": 1.026142223,
+                    "end": 1.078881567
                   }
                 ],
                 "seq": 6
@@ -4243,8 +4243,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 1.240141764,
-                    "end": 1.24017175
+                    "start": 1.079812666,
+                    "end": 1.079866377
                   }
                 ],
                 "seq": 7
@@ -4322,8 +4322,8 @@
                   {
                     "ok": true,
                     "name": "checkA11yRuntime",
-                    "start": 1.24073207,
-                    "end": 1.413243859
+                    "start": 1.080420623,
+                    "end": 1.247213628
                   }
                 ],
                 "seq": 8
@@ -4415,8 +4415,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 1.413941135,
-                    "end": 1.413963226
+                    "start": 1.248058878,
+                    "end": 1.248099103
                   }
                 ],
                 "seq": 9
@@ -4494,8 +4494,8 @@
                   {
                     "ok": true,
                     "name": "prose",
-                    "start": 1.4144606579999999,
-                    "end": 1.414597694
+                    "start": 1.248716567,
+                    "end": 1.248888297
                   }
                 ],
                 "seq": 10
@@ -4565,7 +4565,7 @@
           "messageContext": {
             "artifact": {
               "type": "video",
-              "path": "./tracks/default/test/loop-1/seq-0/featn-2/mem-0/video/ce65cf7af9f87957961908c2a7cfd3c4.webm"
+              "path": "./tracks/default/test/loop-1/seq-0/featn-2/mem-0/video/315087d74f41a5e1a0a6e8eb681dc4c9.webm"
             },
             "topic": {
               "event": "summary",
@@ -4588,7 +4588,7 @@
           },
           "message": "endFeature video",
           "level": "info",
-          "caller": "web-playwright:149:32"
+          "caller": "web-playwright:150:32"
         },
         {
           "messageContext": {
