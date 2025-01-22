@@ -44,7 +44,7 @@
     "@haibun/storage-fs": "1.41.3",
     "@haibun/web-accessibility-axe": "^1.40.9",
     "@haibun/web-http": "1.41.3",
-    "@haibun/web-playwright": "1.41.3",
+    "@haibun/web-playwright": "1.41.3-b",
     "@haibun/web-server-express": "1.41.3",
     "@types/express-fileupload": "^1.4.1",
     "@types/jest": "^29.5.11",
