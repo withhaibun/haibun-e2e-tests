@@ -4,14 +4,11 @@
     "~@haibun/web-playwright/build/web-playwright",
     "~@haibun/web-server-express/build/web-server-stepper",
     "~@haibun/out-review/build/out-reviews-stepper",
-    "~@haibun/domain-webpage/build/domain-webpage",
-    "~@haibun/domain-storage/build/domain-storage",
     "~@haibun/storage-fs/build/storage-fs",
     "~@haibun/web-accessibility-axe/build/a11y-axe-stepper",
     "vars",
     "credentials",
     "haibun",
     "./build-local/test-server"
-  ],
-  "features": {}
+  ]
 }
