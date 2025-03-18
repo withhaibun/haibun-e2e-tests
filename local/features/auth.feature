@@ -21,13 +21,15 @@ Feature: Authentication
         Concat Resource Server and Resources Path as Resources API
         Concat Resource Server and Resource Path as Resource API
         Concat Resource Server and Resource Delete Path as Resource Delete API
-        Concat Resource Server and "/logout?post_logout_redirect_uri=http://locahost:8123/loggedOut" as Logout
+        Concat Resource Server and "/logout?post_logout_redirect_uri=http://localhost:8123/static/loggedOut" as Logout
 
         Set OK to 200
         Set Unauthorized to 401
 
         Serve files at /static from "rest"
         Go to the http://localhost:8123/static/rest.html webpage
+        log to .haibun-log-output
+        pause for 3s
 
     Scenario: Fail authentication 
         Make an HTTP GET to Profile API
@@ -63,3 +65,5 @@ Feature: Authentication
         Make an HTTP GET to Resources API
         JSON response length is 1
 
+
+        pause for 3s

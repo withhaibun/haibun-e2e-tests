@@ -33,7 +33,7 @@ export const authRoutes = (testServer: TestRoute) => {
 
 		async logOut(req: IRequest, res: IResponse) {
 			testServer.authToken = undefined;
-			const redirectTo = req.query.redirect_uri;
+			const redirectTo = req.query.post_logout_redirect_uri;
 			res.redirect(redirectTo!?.toString());
 		},
 
