@@ -3,15 +3,24 @@ import fileUpload from 'express-fileupload';
 
 import { actionNotOK, actionOK, getFromRuntime, sleep, asError } from '@haibun/core/build/lib/util/index.js';
 
-import { AStepper, TNamed, TFeatureStep } from '@haibun/core/build/lib/defs.js';
+import { AStepper, TNamed, TFeatureStep, OK } from '@haibun/core/build/lib/defs.js';
 import { TRequestHandler, IRequest, IResponse, IWebServer, WEBSERVER } from '@haibun/web-server-express/build/defs.js';
-import { authRoutes } from './auth.js';
+import { restRoutes } from './rest.js';
+import { authSchemes, TSchemeType } from './authSchemes.js';
 
 const TALLY = 'tally';
 
-class TestRoute extends AStepper {
+class TestServer extends AStepper {
 	toDelete: { [name: string]: string } = {};
+	authScheme: any;
+
 	authToken: string | undefined;
+
+	basicAuthCreds: undefined | { username: string; password: string } = {
+		username: 'foo',
+		password: 'bar',
+	};
+
 	resources = [
 		{
 			id: 1,
@@ -104,7 +113,7 @@ class TestRoute extends AStepper {
 		},
 		addCreateAuthTokenRoute: {
 			gwta: 'start create auth token route at {loc}',
-			action: this.addRoute(authRoutes(this).createAuthToken),
+			action: this.addRoute(restRoutes(this).createAuthToken),
 		},
 		changeServerAuthToken: {
 			gwta: 'change server auth token to {token}',
@@ -114,26 +123,33 @@ class TestRoute extends AStepper {
 			},
 		},
 		addCheckAuthTokenRoute: {
-			gwta: 'start check auth token route at {loc}',
-			action: this.addRoute(authRoutes(this).checkAuthToken),
+			gwta: 'start check auth route at {loc}',
+			action: this.addRoute(restRoutes(this).checkAuth),
 		},
 		addLogoutRoute: {
-			gwta: 'start logout auth token route at {loc}',
-			action: this.addRoute(authRoutes(this).logOut),
+			gwta: 'start logout auth route at {loc}',
+			action: this.addRoute(restRoutes(this).logOut),
 		},
 		addResources: {
-			gwta: 'start resources route at {loc}',
-			action: this.addRoute(authRoutes(this).resources),
+			gwta: 'start auth resources get route at {loc}',
+			action: this.addRoute(restRoutes(this).resources),
 		},
 		addResourceGet: {
-			gwta: 'start resource get route at {loc}',
-			action: this.addRoute(authRoutes(this).resourceGet),
+			gwta: 'start auth resource get route at {loc}',
+			action: this.addRoute(restRoutes(this).resourceGet),
 		},
 		addResourceDelete: {
-			gwta: 'start resource delete route at {loc}',
-			action: this.addRoute(authRoutes(this).resourceDelete, 'delete'),
+			gwta: 'start auth resource delete route at {loc}',
+			action: this.addRoute(restRoutes(this).resourceDelete, 'delete'),
+		},
+		setAuthScheme: {
+			gwta: 'make auth scheme {scheme}',
+			action: async ({ scheme }: TNamed) => {
+				this.authScheme = authSchemes[<TSchemeType>scheme](this);
+				return OK;
+			},
 		},
 	};
 }
 
-export default TestRoute;
+export default TestServer;

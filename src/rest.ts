@@ -1,14 +1,13 @@
 import { IRequest, IResponse } from '@haibun/web-server-express/build/defs.js';
 
-import TestRoute from './test-server.js';
+import TestServer from './test-server.js';
 
 const newToken = 'newToken';
 
-export const authRoutes = (testServer: TestRoute) => {
+export const restRoutes = (testServer: TestServer) => {
 	return {
 		async createAuthToken(req: IRequest, res: IResponse) {
 			testServer.authToken = newToken;
-			const token = `${newToken}`;
 
 			res.json({
 				token_type: 'Bearer',
@@ -22,22 +21,21 @@ export const authRoutes = (testServer: TestRoute) => {
 			});
 		},
 
-		async checkAuthToken(req: IRequest, res: IResponse) {
-			const token = req.headers.authorization?.replace('Bearer ', '');
-			if (testServer.authToken === undefined || token !== testServer.authToken) {
-				res.status(401).end('Unauthorized');
-				return;
-			}
-			res.status(200).end('OK');
+		async checkAuth(req: IRequest, res: IResponse) {
+			if (!testServer.authScheme.check(req, res)) return;
+			res.status(200).json({ type: 'profile' });
 		},
 
 		async logOut(req: IRequest, res: IResponse) {
-			testServer.authToken = undefined;
-			const redirectTo = req.query.post_logout_redirect_uri;
-			res.redirect(redirectTo!?.toString());
+			testServer.authScheme.logout();
+			const redirectTo = req.query?.post_logout_redirect_uri;
+			if (redirectTo) {
+				res.redirect(redirectTo!?.toString());
+			}
 		},
 
 		async resourceGet(req: IRequest, res: IResponse) {
+			if (!testServer.authScheme.check(req, res)) return;
 			const id = parseInt(req.params.id ?? '', 10);
 			const resource = testServer.resources.find((r) => r.id === id);
 			if (resource) {
@@ -47,6 +45,7 @@ export const authRoutes = (testServer: TestRoute) => {
 			}
 		},
 		async resourceDelete(req: IRequest, res: IResponse) {
+			if (!testServer.authScheme.check(req, res)) return;
 			const id = parseInt(req.params.id ?? '', 10);
 			const resource = testServer.resources.find((r) => r.id === id);
 			if (resource) {
@@ -57,6 +56,7 @@ export const authRoutes = (testServer: TestRoute) => {
 			}
 		},
 		async resources(req: IRequest, res: IResponse) {
+			if (!testServer.authScheme.check(req, res)) return;
 			res.json(testServer.resources);
 		},
 	};

@@ -7,14 +7,15 @@ Feature: Authentication
         Set Resources Path to "/api/resources"
         Set Resource Path to "/api/resource"
         Concat Resource Path and "/:id" as Resource Delete Route
+        Concat Resource Server and "/static/rest.html" as REST Home
         Set Logout Path to "/logout"
 
-        Start check auth token route at Profile Path
+        Start check auth route at Profile Path
         Start create auth token route at Token Path
-        Start logout auth token route at Logout Path
-        Start resources route at Resources Path
-        Start resource get route at Resource Path
-        Start resource delete route at Resource Delete Route
+        Start logout auth route at Logout Path
+        Start auth resources get route at Resources Path
+        Start auth resource get route at Resource Path
+        Start auth resource delete route at Resource Delete Route
 
         Concat Resource Server and Token Path as Authorization Server
         Concat Resource Server and Profile Path as Profile API
@@ -27,18 +28,17 @@ Feature: Authentication
         Set Unauthorized to 401
 
         Serve files at /static from "rest"
-        Go to the http://localhost:8123/static/rest.html webpage
-        log to .haibun-log-output
-        pause for 3s
+        Make auth scheme bearer
 
     Scenario: Fail authentication 
+        Go to the REST Home webpage
         Make an HTTP GET to Profile API
         HTTP status is Unauthorized
 
     Scenario: Check pre-existing authentication token
         Set testtoken to "test-token"
         Change server auth token to testtoken
-        Make Authorization Bearer token testtoken
+        Use Authorization Bearer header with testtoken
         Make an HTTP GET to Resources API
         HTTP status is OK
 
@@ -54,7 +54,7 @@ Feature: Authentication
         Make an HTTP GET to Profile API
         HTTP status is Unauthorized
 
-    Scenario: Filter list of resouces
+    Scenario: Filter list of resources
         Request OAuth 2.0 access token from Authorization Server
         HTTP status is OK
         Make an HTTP GET to Resources API
@@ -64,6 +64,3 @@ Feature: Authentication
         For each filtered id, make REST DELETE to Resource API yielding status 204
         Make an HTTP GET to Resources API
         JSON response length is 1
-
-
-        pause for 3s

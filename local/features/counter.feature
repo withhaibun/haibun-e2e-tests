@@ -3,7 +3,7 @@ Feature: A form and counter
 
     Backgrounds: service/counter, int/counter
 
-    When I have a valid random username <username>
+    have a valid random username <username>
 
     Then serve files at /static from "counter"
     And start tally route at /count
