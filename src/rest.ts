@@ -57,6 +57,11 @@ export const restRoutes = (testServer: TestServer) => {
 		},
 		async resources(req: IRequest, res: IResponse) {
 			if (!testServer.authScheme.check(req, res)) return;
+			if (req.headers['accept'] !== 'application/json') {
+				res.status(401).end(`Must use application/json, not ${req.headers['accept']}`);
+				return;
+			}
+
 			res.json(testServer.resources);
 		},
 	};
