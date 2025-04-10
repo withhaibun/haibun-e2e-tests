@@ -1,3 +1,4 @@
+
 Scenario: Test accessibility failure
 
 Background features are loaded for the environment the test is running.

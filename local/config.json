@@ -10,5 +10,4 @@
     "credentials",
     "haibun",
     "./build-local/test-server"
-  ]
 }
