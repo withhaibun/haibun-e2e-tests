@@ -1,4 +1,4 @@
-Feature: Authentication
+Feature: Auth-bearer Authentication
     Scenario: setup
         Set Resource Server to http://localhost:8123
         Set Profile Path to "/me"

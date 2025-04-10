@@ -3,14 +3,36 @@ import fileUpload from 'express-fileupload';
 
 import { actionNotOK, actionOK, getFromRuntime, sleep, asError } from '@haibun/core/build/lib/util/index.js';
 
-import { AStepper, TNamed, TFeatureStep, OK } from '@haibun/core/build/lib/defs.js';
+import { AStepper, TNamed, TFeatureStep, OK, IStepperCycles } from '@haibun/core/build/lib/defs.js';
 import { TRequestHandler, IRequest, IResponse, IWebServer, WEBSERVER } from '@haibun/web-server-express/build/defs.js';
 import { restRoutes } from './rest.js';
 import { authSchemes, TSchemeType } from './authSchemes.js';
+import { EExecutionMessageType } from '@haibun/core/build/lib/interfaces/logger.js';
 
 const TALLY = 'tally';
 
+const cycles = (ts: TestServer): IStepperCycles => ({
+	startFeature: async () => {
+		ts.getWorld().shared.set(TALLY, '0');
+		ts.resources = [
+			{
+				id: 1,
+				name: 'Ignore 1',
+			},
+			{
+				id: 2,
+				name: 'Include 2',
+			},
+			{
+				id: 3,
+				name: 'Include 3',
+			},
+		]
+	}
+});
+
 class TestServer extends AStepper {
+	cycles = cycles(this);
 	toDelete: { [name: string]: string } = {};
 	authScheme: any;
 
@@ -21,20 +43,7 @@ class TestServer extends AStepper {
 		password: 'bar',
 	};
 
-	resources = [
-		{
-			id: 1,
-			name: 'Ignore 1',
-		},
-		{
-			id: 2,
-			name: 'Include 2',
-		},
-		{
-			id: 3,
-			name: 'Include 3',
-		},
-	];
+	resources: { id: number; name: string }[] = [];
 
 	async endedFeatures() {
 		if (Object.keys(this.toDelete).length > 0) {
@@ -52,7 +61,7 @@ class TestServer extends AStepper {
 				webserver.addRoute(method, loc!, route);
 			} catch (error) {
 				console.error(error);
-				return actionNotOK(vstep.in, { error: asError(error) });
+				return actionNotOK(vstep.in, { incident: EExecutionMessageType.ACTION, incidentDetails: asError(error) });
 			}
 			return actionOK();
 		};
@@ -105,7 +114,18 @@ class TestServer extends AStepper {
 		},
 		addUploadRoute: {
 			gwta: 'start upload route at {loc}',
-			action: this.addRoute(this.upload, 'post'),
+			// Define action directly to include middleware, bypassing addRoute helper
+			action: async ({ loc }: TNamed, vstep: TFeatureStep) => {
+				try {
+					const webserver: IWebServer = getFromRuntime(this.getWorld().runtime, WEBSERVER);
+					// Register route directly with method, location, middleware (cast to any), and handler
+					webserver.addRoute('post', loc!, fileUpload() as any, this.upload);
+					return actionOK();
+				} catch (error) {
+					this.getWorld().logger.error(`Error adding upload route ${loc}: ${error}`);
+					return actionNotOK(vstep.in, { incident: EExecutionMessageType.ACTION, incidentDetails: asError(error) });
+				}
+			},
 		},
 		addDownloadRoute: {
 			gwta: 'start download route at {loc}',

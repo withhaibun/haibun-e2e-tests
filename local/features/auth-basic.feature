@@ -1,6 +1,7 @@
-Feature: Authentication
+Feature: Auth-basic Authentication
 
     Scenario: setup
+        After every WebPlaywright, pause for 1s
         Set Resource Server to http://localhost:8123
         Set Resources Path to "/api/resources"
         Set Resource Path to "/api/resource"
@@ -26,6 +27,7 @@ Feature: Authentication
 
     Scenario: Fail authentication 
         Go to the REST Home webpage
+
         Make an HTTP GET to Profile API
         HTTP status is Unauthorized
 

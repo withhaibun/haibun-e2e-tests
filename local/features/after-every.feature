@@ -1,23 +1,21 @@
-Feature: Test accessibility failure
+Scenario: Test accessibility failure
 
 Background features are loaded for the environment the test is running.
 
-Backgrounds: int/a11y
+Backgrounds: service/counter, int/counter
     serve files at /static from "counter"
+    have a valid random username <username>
 
-    After every WebPlaywright, Page is accessible accepting serious 0 and moderate 0
-
-    Go to the test webpage
+    start tally route at /count
     
-    And start tally route at /count
-    
-    Go to the form webpage
-    When I input <username> for user name
-    And I click the button Submit
+    After every WebPlaywright, Page is accessible accepting serious 9 and moderate 9
+    Go to the counter webpage
+    input <username> for user name
+    click the button Submit
 
-    Then the URI query parameter username is <username>
-    Then save URI query parameter username to username parameter
-    Then the URI starts with counter URI
-    And I should see <username>
-    And I should see username parameter
-    And the cookie userid is <username>
+    URI query parameter username is <username>
+    save URI query parameter username to username parameter
+    URI starts with counter URI
+    should see <username>
+    should see username parameter
+    cookie userid is <username>

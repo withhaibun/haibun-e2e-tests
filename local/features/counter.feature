@@ -1,14 +1,14 @@
 
-Feature: A form and counter
-
+Scenario: A form and counter
     Backgrounds: service/counter, int/counter
 
     have a valid random username <username>
 
     Then serve files at /static from "counter"
     And start tally route at /count
+    After every WebPlaywright, pause for 1s
     
-    Go to the form webpage
+    Go to the counter webpage
     When I input <username> for user name
     And I click the button Submit
 
