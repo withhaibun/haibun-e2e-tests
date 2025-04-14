@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   e2e_test_and_publish:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -43,10 +43,9 @@ jobs:
       run: npm ci
 
     - name: playwright install
-      run: npx playwright install --with-deps
-
-      #     npx playwright install-deps
-      #     npx playwright install chrome
+      run: |
+          npx playwright install-deps
+          npx playwright install chrome
         
     - name: Build
       run: npm run build
