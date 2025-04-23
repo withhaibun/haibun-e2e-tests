@@ -16,5 +16,8 @@ Backgrounds: int/upload-form
     Expect a download
     Click by text "Uploaded file"
     #to-download
-    Receive download as "/tmp/test-downloaded.jpg"
-    Then "files/picture.jpg" is the same as "/tmp/test-downloaded.jpg"
+    create directory at tmp
+    list files from tmp
+    Receive download as "tmp/test-downloaded.jpg"
+    Then "files/picture.jpg" is the same as "tmp/test-downloaded.jpg"
+    list files from tmp

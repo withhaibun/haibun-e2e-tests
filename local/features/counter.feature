@@ -6,7 +6,7 @@ Scenario: A form and counter
 
     Then serve files at /static from "counter"
     And start tally route at /count
-    After every WebPlaywright, pause for 1s
+    # After every WebPlaywright, pause for 1s
     
     Go to the counter webpage
     When I input <username> for user name

@@ -50,7 +50,7 @@ jobs:
 
     - name: Run tests
       continue-on-error: true
-      run: HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=true npm test
+      run: HAIBUN_CONTINUE_AFTER_ERROR=true HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=true npm test
 
       # - name: Publish
       #   run: npm run publish

@@ -1,7 +1,7 @@
 Feature: Auth-basic Authentication
 
     Scenario: setup
-        After every WebPlaywright, pause for 1s
+        # After every WebPlaywright, pause for 1s
         Set Resource Server to http://localhost:8123
         Set Resources Path to "/api/resources"
         Set Resource Path to "/api/resource"
