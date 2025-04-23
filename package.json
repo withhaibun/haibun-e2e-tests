@@ -2,7 +2,7 @@
   "type": "module",
   "publish": "true",
   "name": "@haibun/e2e-tests",
-  "version": "1.44.2",
+  "version": "1.44.5",
   "description": "e2e tests for haibun",
   "files": [
     "build",
