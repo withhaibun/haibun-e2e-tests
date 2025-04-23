@@ -2,7 +2,7 @@
   "type": "module",
   "publish": "true",
   "name": "@haibun/e2e-tests",
-  "version": "1.44.5",
+  "version": "1.44.1",
   "description": "e2e tests for haibun",
   "files": [
     "build",
@@ -42,7 +42,7 @@
     "@haibun/storage-fs": "1.44.4",
     "@haibun/web-accessibility-axe": "^1.44.4",
     "@haibun/web-http": "1.44.4",
-    "@haibun/web-playwright": "1.44.4",
+    "@haibun/web-playwright": "1.44.5",
     "@haibun/web-server-express": "1.44.4",
     "@types/express-fileupload": "^1.4.1",
     "@types/jest": "^29.5.11",
