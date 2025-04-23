@@ -16,7 +16,7 @@
   "scripts": {
     "build-watch": "tsc --watch",
     "build": "tsc",
-    "test": "HAIBUN_O_WEBPLAYWRIGHT_MONITOR=all HAIBUN_O_OUTXUNIT_STORAGE=StorageFS HAIBUN_O_A11YSTEPPER_STORAGE=StorageFS HAIBUN_KEY=test HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true haibun-cli local",
+    "test": "HAIBUN_O_WEBPLAYWRIGHT_MONITOR=each HAIBUN_O_OUTXUNIT_STORAGE=StorageFS HAIBUN_O_A11YSTEPPER_STORAGE=StorageFS HAIBUN_KEY=test HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true haibun-cli local",
     "help": "npm run test -- --help",
     "test-xss": "npm run test -- xss",
     "test-counter": "npm run test -- counter",
@@ -42,7 +42,7 @@
     "@haibun/storage-fs": "1.44.4",
     "@haibun/web-accessibility-axe": "^1.44.4",
     "@haibun/web-http": "1.44.4",
-    "@haibun/web-playwright": "1.44.5",
+    "@haibun/web-playwright": "1.44.6",
     "@haibun/web-server-express": "1.44.4",
     "@types/express-fileupload": "^1.4.1",
     "@types/jest": "^29.5.11",
