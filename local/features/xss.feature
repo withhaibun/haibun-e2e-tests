@@ -9,7 +9,7 @@ Scenario: Check against URI xss exploit
     pause for 1s
     Dialog "clicked" message not set
 
-    Concat xss and ?;alert('hi') as exploit
+    Combine xss and ?;alert('hi') as exploit
     Go to the exploit webpage
     pause for 1s
     Dialog "clicked" message says "hi"

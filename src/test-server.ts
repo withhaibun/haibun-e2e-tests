@@ -3,11 +3,12 @@ import fileUpload from 'express-fileupload';
 
 import { actionNotOK, actionOK, getFromRuntime, sleep, asError } from '@haibun/core/build/lib/util/index.js';
 
-import { AStepper, TNamed, TFeatureStep, OK, IStepperCycles } from '@haibun/core/build/lib/defs.js';
+import { TNamed, TFeatureStep, OK, IStepperCycles } from '@haibun/core/build/lib/defs.js';
 import { TRequestHandler, IRequest, IResponse, IWebServer, WEBSERVER } from '@haibun/web-server-express/build/defs.js';
 import { restRoutes } from './rest.js';
 import { authSchemes, TSchemeType } from './authSchemes.js';
-import { EExecutionMessageType } from '@haibun/core/build/lib/interfaces/logger.js';
+import { EExecutionMessageType, TMessageContext } from '@haibun/core/build/lib/interfaces/logger.js';
+import { AStepper } from '@haibun/core/build/lib/astepper.js';
 
 const TALLY = 'tally';
 
@@ -61,14 +62,15 @@ class TestServer extends AStepper {
 				webserver.addRoute(method, loc!, route);
 			} catch (error) {
 				console.error(error);
-				return actionNotOK(vstep.in, { incident: EExecutionMessageType.ACTION, incidentDetails: asError(error) });
+				const messageContext: TMessageContext = { incident: EExecutionMessageType.ACTION, incidentDetails: asError(error) }
+				return actionNotOK(vstep.in, { messageContext });
 			}
 			return actionOK();
 		};
 	};
 
 	tally: TRequestHandler = async (req: IRequest, res: IResponse) => {
-		this.getWorld().shared.set(TALLY, `${(parseInt(this.getWorld().shared.get(TALLY), 10) || 0) + 1}`);
+		this.getWorld().shared.set(TALLY, `${(parseInt(this.getWorld().shared.get(TALLY) || '', 10) || 0) + 1}`);
 		this.getWorld().logger.log(`tally ${this.getWorld().shared.get(TALLY)}`);
 		const { username } = req.query;
 		await sleep(Math.random() * 2000);
@@ -123,7 +125,8 @@ class TestServer extends AStepper {
 					return actionOK();
 				} catch (error) {
 					this.getWorld().logger.error(`Error adding upload route ${loc}: ${error}`);
-					return actionNotOK(vstep.in, { incident: EExecutionMessageType.ACTION, incidentDetails: asError(error) });
+					const messageContext: TMessageContext = { incident: EExecutionMessageType.ACTION, incidentDetails: asError(error) }
+					return actionNotOK(vstep.in, { messageContext });
 				}
 			},
 		},
@@ -173,3 +176,5 @@ class TestServer extends AStepper {
 }
 
 export default TestServer;
+
+
