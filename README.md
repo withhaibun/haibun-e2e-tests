@@ -15,8 +15,8 @@ End to end tests with core and add-on Haibun steppers.
 
 `npm run build` to build
 
-`npm run test` to watch all tests.
+`npm run test` to run all tests, or `npm run test <name>` for one test, for example, `npm run test after-every`.
 
 Features are in local/features/.
 
-Take a look at scripts in package.json for more test options.
+Take a look at scripts in package.json for more test options, and use `npm run test -- --help`
