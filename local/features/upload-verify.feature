@@ -15,7 +15,6 @@ Backgrounds: int/upload-form
     See "Uploaded file"
     Expect a download
     Click by text "Uploaded file"
-    #to-download
     create directory at tmp
     list files from tmp
     Receive download as "tmp/test-downloaded.jpg"

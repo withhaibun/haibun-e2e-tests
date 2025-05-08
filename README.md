@@ -17,17 +17,6 @@ End to end tests with core and add-on Haibun steppers.
 
 `npm run test` to watch all tests.
 
-`npm run publish` to publish test results to reviews/dashboard.html
-
 Features are in local/features/.
 
 Take a look at scripts in package.json for more test options.
-
-## Setting up your own instance
-
-* If using an org, enable Fine-grained personal access tokens
-* Create a personal access token (PAT)
-* create a secret with that PATs code
-* Update your pipeine to use that token under the checkout action
-
-https://api.github.com/repos/withhaibun/haibun-e2e-tests/git/trees/main
