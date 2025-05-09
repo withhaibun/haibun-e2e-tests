@@ -1,7 +1,7 @@
 
-Scenario: Test accessibility failure
+Scenario: After-every
 
-Background features are loaded for the environment the test is running.
+Tests accessibility after browser action.
 
 Backgrounds: service/counter, int/counter
     serve files at /static from "counter"

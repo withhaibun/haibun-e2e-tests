@@ -19,4 +19,6 @@ End to end tests with core and add-on Haibun steppers.
 
 Features are in local/features/.
 
+`npm run walkthrough` will create a sample video with audio walkthrough.
+
 Take a look at scripts in package.json for more test options, and use `npm run test -- --help`
