@@ -1,7 +1,6 @@
 go to the https://github.com/withhaibun/haibun-e2e-tests/blob/main/OVERVIEW.md webpage
 press PageDown
 press PageDown
-pause for 10s
 resize window to largest dimensions
 
 Haibun is a narrative-driven testing framework that blends prose with executable steps. 
@@ -18,10 +17,11 @@ serve files at /static from "counter"
 have a valid random username <username>
 start tally route at /count
 
+Go to the counter webpage
+
 We can verify the page is heuristically accessible after every browser action.
 After every WebPlaywright, Page is accessible accepting serious 9 and moderate 9
 
-Go to the counter webpage
 input <username> for user name
 click the button Submit
 
@@ -36,3 +36,4 @@ cookie userid is <username>
 The URI is correct and the cookie is properly set.
 
 Looks good to me!
+pause for 10s
