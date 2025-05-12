@@ -17,26 +17,26 @@ declare class TestServer extends AStepper {
         name: string;
     }[];
     endedFeatures(): Promise<void>;
-    addRoute: (route: TRequestHandler, method?: "get" | "post" | "delete") => ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TOKActionResult | import("@haibun/core/build/lib/defs.js").TNotOKActionResult>;
+    addRoute: (route: TRequestHandler, method?: "get" | "post" | "delete") => ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TNotOKActionResult | import("@haibun/core/build/lib/defs.js").TOKActionResult>;
     tally: TRequestHandler;
     download: TRequestHandler;
     upload: TRequestHandler;
     steps: {
         addTallyRoute: {
             gwta: string;
-            action: ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TOKActionResult | import("@haibun/core/build/lib/defs.js").TNotOKActionResult>;
+            action: ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TNotOKActionResult | import("@haibun/core/build/lib/defs.js").TOKActionResult>;
         };
         addUploadRoute: {
             gwta: string;
-            action: ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TOKActionResult | import("@haibun/core/build/lib/defs.js").TNotOKActionResult>;
+            action: ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TNotOKActionResult | import("@haibun/core/build/lib/defs.js").TOKActionResult>;
         };
         addDownloadRoute: {
             gwta: string;
-            action: ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TOKActionResult | import("@haibun/core/build/lib/defs.js").TNotOKActionResult>;
+            action: ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TNotOKActionResult | import("@haibun/core/build/lib/defs.js").TOKActionResult>;
         };
         addCreateAuthTokenRoute: {
             gwta: string;
-            action: ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TOKActionResult | import("@haibun/core/build/lib/defs.js").TNotOKActionResult>;
+            action: ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TNotOKActionResult | import("@haibun/core/build/lib/defs.js").TOKActionResult>;
         };
         changeServerAuthToken: {
             gwta: string;
@@ -44,23 +44,23 @@ declare class TestServer extends AStepper {
         };
         addCheckAuthTokenRoute: {
             gwta: string;
-            action: ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TOKActionResult | import("@haibun/core/build/lib/defs.js").TNotOKActionResult>;
+            action: ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TNotOKActionResult | import("@haibun/core/build/lib/defs.js").TOKActionResult>;
         };
         addLogoutRoute: {
             gwta: string;
-            action: ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TOKActionResult | import("@haibun/core/build/lib/defs.js").TNotOKActionResult>;
+            action: ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TNotOKActionResult | import("@haibun/core/build/lib/defs.js").TOKActionResult>;
         };
         addResources: {
             gwta: string;
-            action: ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TOKActionResult | import("@haibun/core/build/lib/defs.js").TNotOKActionResult>;
+            action: ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TNotOKActionResult | import("@haibun/core/build/lib/defs.js").TOKActionResult>;
         };
         addResourceGet: {
             gwta: string;
-            action: ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TOKActionResult | import("@haibun/core/build/lib/defs.js").TNotOKActionResult>;
+            action: ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TNotOKActionResult | import("@haibun/core/build/lib/defs.js").TOKActionResult>;
         };
         addResourceDelete: {
             gwta: string;
-            action: ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TOKActionResult | import("@haibun/core/build/lib/defs.js").TNotOKActionResult>;
+            action: ({ loc }: TNamed, vstep: TFeatureStep) => Promise<import("@haibun/core/build/lib/defs.js").TNotOKActionResult | import("@haibun/core/build/lib/defs.js").TOKActionResult>;
         };
         setAuthScheme: {
             gwta: string;
