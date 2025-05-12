@@ -1,11 +1,14 @@
 go to the https://github.com/withhaibun/haibun-e2e-tests/blob/main/OVERVIEW.md webpage
 press PageDown
 press PageDown
+
 resize window to largest dimensions
 
 Haibun is a narrative-driven testing framework that blends prose with executable steps. 
 That makes test scenarios both readable by any team member, and precise.
 By combining background setup, user actions, and assertions, Haibun facilitates comprehensive and maintainable end-to-end specification, testing, and documentation.
+
+go to the https://github.com/withhaibun/haibun-e2e-tests/blob/main/walkthrough/features/walkthrough.feature webpage
 
 Scenario: Accessibility for web counter test
 Backgrounds: service/counter, int/counter
@@ -36,4 +39,4 @@ cookie userid is <username>
 The URI is correct and the cookie is properly set.
 
 Looks good to me!
-pause for 10s
+pause for 4s
