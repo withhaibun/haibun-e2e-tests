@@ -6,7 +6,7 @@ resize window to largest dimensions
 
 Haibun is a narrative-driven testing framework that blends prose with executable steps for easy to understand and precise end-to-end tests.
 
-go to the "https://raw.githubusercontent.com/withhaibun/haibun-e2e-tests/refs/heads/main/walkthrough/features/walkthrough.feature#:~:text=walkthrough.feature%20webpage-,Scenario" webpage
+go to the "https://raw.githubusercontent.com/withhaibun/haibun-e2e-tests/main/walkthrough/features/walkthrough.feature#:~:text=walkthrough.feature%20webpage-,Scenario" webpage
 By combining background setup, user actions, and assertions, Haibun facilitates comprehensive and maintainable end-to-end specification, testing, and documentation, including walkthroughs like this one.
 
 Scenario: Accessibility for web counter test
