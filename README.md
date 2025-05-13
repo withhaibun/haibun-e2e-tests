@@ -26,7 +26,7 @@ Take a look at scripts in package.json for more test options, and use `npm run t
 `npm run walkthrough` will create a sample video with audio walkthrough.
 
 <video controls>
-  <source src="https://github.com/withhaibun/haibun-e2e-tests/blob/main/vcapture-20250513.webm" type="video/webm">
+  <source src="https://withhaibun.github.io/haibun-e2e-tests/vcapture-20250513.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
