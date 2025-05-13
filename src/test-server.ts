@@ -77,7 +77,7 @@ class TestServer extends AStepper {
 		res
 			.status(200)
 			.cookie('userid', username)
-			.send(`tally ${this.getWorld().shared.get(TALLY)}<br />username ${username} `);
+			.send(`<h1>Counter test</h1>tally: ${this.getWorld().shared.get(TALLY)}<br />username ${username} `);
 	};
 
 	download: TRequestHandler = async (req: IRequest, res: IResponse) => {
