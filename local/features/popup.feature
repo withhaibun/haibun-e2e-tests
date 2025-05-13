@@ -1,10 +1,9 @@
 
-Feature: A popup window
+Scenario: Handle popup window
 
     Backgrounds:  int/popup
 
     serve files from "popup"
-show vars 
     Go to the test webpage
     click the link open
 

@@ -19,46 +19,46 @@ concurrency:
 jobs:
   e2e_test_and_publish:
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.52.0-noble
     steps:
-      - uses: actions/setup-node@v3.5.1
-      - uses: actions/checkout@v4
-      # - uses: fregante/setup-git-user@v2
-        with:
-          repository: withhaibun/haibun-e2e-tests
-          token: ${{ secrets.PAT_HE2E }}
-          node-version: 18
-          ref: gh-pages
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      # - uses: actions/setup-node@v3.5.1
+      # # - uses: fregante/setup-git-user@v2
+      #   with:
+      #     repository: withhaibun/haibun-e2e-tests
+      #     token: ${{ secrets.PAT_HE2E }}
+      #     ref: gh-pages
 
-      - name: Set up GitHub Actions bot identity
-        run: |
-          git config user.name "github-actions[pat]"
-          git config user.email "vid_github@zooid.org"
+      # - name: Set up GitHub Actions bot identity
+      #   run: |
+      #     git config user.name "github-actions[pat]"
+      #     git config user.email "vid_github@zooid.org"
 
-      - name: Merge main branch
-        run: |
-          git fetch origin main
-          git merge --allow-unrelated-histories -X theirs origin/main
+      # - name: Merge main branch
+      #   run: |
+      #     git fetch origin main
+      #     git merge --allow-unrelated-histories -X theirs origin/main
 
-      - name: Install dependencies
-        run: npm ci
-      - name: playwright install
-        run: |
-          npx playwright install-deps
-          npx playwright install
+    - name: Install dependencies
+      run: npm ci
+
         
-      - name: Build
-        run: npm run build
+    - name: Build
+      run: npm run build
 
-      - name: Run tests
-        continue-on-error: true
-        run: npm test a11y
+    - name: Run tests
+      continue-on-error: true
+      run: HAIBUN_CONTINUE_AFTER_ERROR=true HAIBUN_O_WEBPLAYWRIGHT_HEADLESS=true npm test
 
-      - name: Publish
-        run: npm run publish
+      # - name: Publish
+      #   run: npm run publish
 
-      - name: Add reviews
-        run: git add ./reviews/
+      # - name: Add reviews
+      #   run: git add ./reviews/
 
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "update e2e test reviews"
+      # - uses: stefanzweifel/git-auto-commit-action@v5
+      #   with:
+      #     commit_message: "update e2e test reviews"
+

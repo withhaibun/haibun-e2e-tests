@@ -1,10 +1,9 @@
-Feature: Test accessibility pass
-
-Background features are loaded for the environment the test is running.
+Scenario: Test accessibility pass
 
 Backgrounds: int/a11y
 
-Files crucial for accessibility checks are served for the automated testing process.
+Files for accessibility checks are served for the automated testing process.
+
 Serve files from "a11y"
 
 Go to the test webpage

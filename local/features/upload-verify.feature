@@ -1,5 +1,7 @@
 
-Feature: Upload a file, then download it and verify it's the same file
+Feature: Upload-verify
+
+Scenario: Upload a file, then download it and verify it's the same file
 
 Backgrounds: int/upload-form
     Serve files at /static from "upload"
@@ -10,10 +12,11 @@ Backgrounds: int/upload-form
     Upload file "files/picture.jpg" using upload chooser
     Click the button Upload
 
-    Should see "Uploaded file"
-    Click on "Uploaded file"
-    Save download to "/tmp/test-downloaded.jpg"
-    Then "files/picture.jpg" is the same as "/tmp/test-downloaded.jpg"
-
-
-
+    See "Uploaded file"
+    Expect a download
+    Click by text "Uploaded file"
+    create directory at tmp
+    list files from tmp
+    Receive download as "tmp/test-downloaded.jpg"
+    Then "files/picture.jpg" is the same as "tmp/test-downloaded.jpg"
+    list files from tmp
