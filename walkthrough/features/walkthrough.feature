@@ -20,7 +20,7 @@ After every WebPlaywright, Page is accessible accepting serious 9 and moderate 9
 serve files at /static from "counter"
 start tally route at /count
 Go to the counter webpage
-We will test a counter web application by simulating a user interacting with an app, verifying the results for each step.
+We will test a counter web application by simulating a user interacting with a page, verifying the results for each step.
 First, we set up the backend and user context required for the test, with a generated username.
 have a valid random username <username>
 
