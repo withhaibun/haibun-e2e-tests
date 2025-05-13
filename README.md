@@ -2,11 +2,7 @@
 
 # haibun-e2e-tests
 
-End to end tests with core and add-on Haibun steppers.
-
-* [Overview](OVERVIEW.md) 
-* [Overview video](https://withhaibun.github.io/haibun-e2e-tests/vcapture-20250513.webm)
-* [Interactive Monitor](https://withhaibun.github.io/haibun-e2e-tests/monitor.html)
+End to end tests with core and add-on [Haibun](https://github.com/withhaibun/haibun) steppers.
 
 `cd` to the project directory, then
 
@@ -16,7 +12,7 @@ End to end tests with core and add-on Haibun steppers.
 
 `npm run test` to run all tests, or `npm run test <name>` for one test, for example, `npm run test after-every`.
 
-Features are in local/features/.
+Features are in local/features/, walkthrough/features.
 
 Take a look at scripts in package.json for more test options, and use `npm run test -- --help`
 
@@ -29,4 +25,8 @@ Take a look at scripts in package.json for more test options, and use `npm run t
   Your browser does not support the video tag.
 </video>
 
+## Interactive monitor
 
+Generated using `HAIBUN_O_WEBPLAYWRIGHT_MONITOR=each`
+
+[Sample monitor](https://withhaibun.github.io/haibun-e2e-tests/monitor.html)
