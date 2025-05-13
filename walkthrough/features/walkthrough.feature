@@ -39,4 +39,4 @@ cookie userid is <username>
 The URI is correct and the cookie is properly set.
 
 Looks good to me!
-pause for 4s`
+pause for 4s
