@@ -19,6 +19,15 @@ End to end tests with core and add-on Haibun steppers.
 
 Features are in local/features/.
 
+Take a look at scripts in package.json for more test options, and use `npm run test -- --help`
+
+## Walkthrough
+
 `npm run walkthrough` will create a sample video with audio walkthrough.
 
-Take a look at scripts in package.json for more test options, and use `npm run test -- --help`
+<video controls>
+  <source src="https://github.com/withhaibun/haibun-e2e-tests/blob/main/vcapture-20250513.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+
