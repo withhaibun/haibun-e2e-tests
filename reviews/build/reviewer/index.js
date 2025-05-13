@@ -1,10 +1,8 @@
 /**
  * Bundle of haibun-reviews-dashboard
  * Generated: 2024-01-24
- * Version: 1.34.2
+ * Version: 1.34.5
  * Dependencies:
- *
- * @haibun/core -- 1.32.9
  *
  * tslib -- 2.6.2
  *
@@ -15,6 +13,8 @@
  * lit-element -- 4.0.2
  *
  * @alenaksu/json-viewer -- 2.0.1
+ *
+ * @haibun/core -- 1.32.9
  */
 
 /******************************************************************************
@@ -159,6 +159,32 @@ const t={ATTRIBUTE:1,CHILD:2,PROPERTY:3,BOOLEAN_ATTRIBUTE:4,EVENT:5,ELEMENT:6},e
 function l(e,t,o,r){var n,i=arguments.length,l=i<3?t:null===r?r=Object.getOwnPropertyDescriptor(t,o):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)l=Reflect.decorate(e,t,o,r);else for(var c=e.length-1;c>=0;c--)(n=e[c])&&(l=(i<3?n(l):i>3?n(t,o,l):n(t,o))||l);return i>3&&l&&Object.defineProperty(t,o,l),l}function c(e,t,o,r){return new(o||(o=Promise))((function(n,i){function l(e){try{a(r.next(e));}catch(e){i(e);}}function c(e){try{a(r.throw(e));}catch(e){i(e);}}function a(e){var t;e.done?n(e.value):(t=e.value,t instanceof o?t:new o((function(e){e(t);}))).then(l,c);}a((r=r.apply(e,t||[])).next());}))}function a(e){return null===e?"null":Array.isArray(e)?"array":e.constructor.name.toLowerCase()}function s(e){return e!==Object(e)}function d(e){return !!e&&!!e.nodeType}function u(e){return s(e)||d(e)}function*f(e){const t=[[e,"",[]]];for(;t.length;){const[e,o,r]=t.shift();if(o&&(yield [e,o,r]),!s(e))for(const[n,i]of Object.entries(e))t.push([i,`${o}${o?".":""}${n}`,[...r,o]]);}}const h={fromAttribute:e=>e&&e.trim()?JSON.parse(e):void 0,toAttribute:e=>JSON.stringify(e)},p=e=>void 0!==e,b=(e,t)=>t instanceof RegExp?!!e.match(t):function(e,t){const o=e.split("."),r=t.split("."),n=e=>"**"===e;let i=0,l=0;for(;i<o.length;){const e=r[l];if(e===o[i]||"*"===e)l++,i++;else {if(!n(e))return !1;l++,i=o.length-(r.length-l);}}return l===r.length}(e,t),v=(e,t)=>(o,r)=>{const n={};if(e)for(const[,o,i]of f(r.data))b(o,e)&&(n[o]=t,i.forEach((e=>n[e]=t)));return {expanded:n}},g=e=>()=>({highlight:e}),m=i$3`:host{--background-color:#2a2f3a;--color:#f8f8f2;--string-color:#a3eea0;--number-color:#d19a66;--boolean-color:#4ba7ef;--null-color:#df9cf3;--property-color:#6fb3d2;--preview-color:rgba(222,175,143,0.9);--highlight-color:#7b0000;--font-family:monaco,Consolas,'Lucida Console',monospace;--font-size:1rem;--indent-size:1.5em;--indentguide-size:1px;--indentguide-style:solid;--indentguide-color:#333;--indentguide-color-active:#666;--indentguide:var(--indentguide-size) var(--indentguide-style) var(--indentguide-color);--indentguide-active:var(--indentguide-size) var(--indentguide-style) var(--indentguide-color-active);display:block;background-color:var(--background-color);color:var(--color);font-family:var(--font-family);font-size:var(--font-size)}.preview{color:var(--preview-color)}.null{color:var(--null-color)}.key{color:var(--property-color);display:inline-block}.collapsable:before{display:inline-block;color:var(--color);font-size:.8em;content:'▶';line-height:1em;width:1em;height:1em;text-align:center;transition:transform 195ms ease-out;transform:rotate(90deg);color:var(--property-color)}.collapsable.collapsableCollapsed:before{transform:rotate(0)}.collapsable{cursor:pointer;user-select:none}.string{color:var(--string-color)}.number{color:var(--number-color)}.boolean{color:var(--boolean-color)}ul{padding:0;clear:both}ul,li{list-style:none;position:relative}li ul>li{position:relative;margin-left:var(--indent-size);padding-left:0}ul ul:before{content:'';border-left:var(--indentguide);position:absolute;left:calc(0.5em - var(--indentguide-size));top:.3em;bottom:.3em}ul ul:hover:before{border-left:var(--indentguide-active)}mark{background-color:var(--highlight-color)}`;class y extends s$1{constructor(){super(...arguments),this.state={expanded:{},filtered:{},highlight:null},this.handlePropertyClick=e=>t=>{t.preventDefault(),this.setState(((e,t)=>o=>({expanded:Object.assign(Object.assign({},o.expanded),{[e]:p(t)?!!t:!o.expanded[e]})}))(e));};}setState(e){return c(this,void 0,void 0,(function*(){const t=this.state;this.state=Object.assign(Object.assign({},t),e(t,this));}))}connectedCallback(){this.hasAttribute("data")||p(this.data)||this.setAttribute("data",this.innerText),super.connectedCallback();}expand(e){this.setState(v(e,!0));}expandAll(){this.setState(v("**",!0));}collapseAll(){this.setState(v("**",!1));}collapse(e){this.setState(v(e,!1));}*search(e){for(const[t,o]of f(this.data))u(t)&&String(t).includes(e)&&(this.expand(o),this.updateComplete.then((()=>{const e=this.shadowRoot.querySelector(`[data-path="${o}"]`);e.scrollIntoView({behavior:"smooth",inline:"center",block:"center"}),e.focus();})),this.setState(g(o)),yield {value:t,path:o});this.setState(g(null));}filter(e){var t;this.setState((t=e,(e,o)=>{const r={};if(t)for(const[,e,n]of f(o.data))b(e,t)?(r[e]=!1,n.forEach((e=>r[e]=!1))):r[e]=!0;return {filtered:r}}));}resetFilter(){this.setState((()=>({filtered:{}})));}renderObject(e,t){return x`<ul part="object">${Object.keys(e).map((r=>{const n=e[r],l=t?`${t}.${r}`:r,c=u(n);return x`<li part="property" data-path="${l}" .hidden="${this.state.filtered[l]}"><span part="key" class="${o({key:r,collapsable:!c,collapsableCollapsed:!this.state.expanded[l]})}" @click="${c?null:this.handlePropertyClick(l)}">${r}: </span>${this.renderNode(n,l)}</li>`}))}</ul>`}renderNode(e,t=""){const o=u(e);return !t||this.state.expanded[t]||o?o?this.renderPrimitive(e,t):this.renderObject(e,t):this.renderNodePreview(e)}renderNodePreview(e){return x`<span part="preview" class="preview">${function(e,{nodeCount:t=3,maxLength:o=15}={}){const r=Array.isArray(e),n=Object.keys(e),i=n.slice(0,t),l=[],c=e=>{switch(a(e)){case"object":return 0===Object.keys(e).length?"{ }":"{ ... }";case"array":return 0===e.length?"[ ]":"[ ... ]";case"string":return `"${e.substring(0,o)}${e.length>o?"...":""}"`;default:return String(e)}},s=[];for(const t of i){const o=[],n=e[t];r||o.push(`${t}: `),o.push(c(n)),s.push(o.join(""));}n.length>t&&s.push("..."),l.push(s.join(", "));const d=l.join("");return r?`[ ${d} ]`:`{ ${d} }`}(e)}</span>`}renderPrimitive(e,t){const r=this.state.highlight,n=a(e),i=d(e)?e:x`<span part="primitive primitive-${n}" tabindex="0" class="${a(e)}">${JSON.stringify(e)}</span>`;return t===r?x`<mark part="highlight">${i}</mark>`:i}render(){const e=this.data;return p(e)?this.renderNode(e):null}}y.styles=[m],l([n$1({converter:h,type:Object})],y.prototype,"data",void 0),l([t$1()],y.prototype,"state",void 0);
 
 customElements.define("json-viewer",y);
+
+class ClipboardCopy extends s$5 {
+    // black background css
+    static styles = i$7 `:host {
+        display: block;
+        background-color: black;
+        padding: 1px;
+        }`;
+    json = {};
+    render() {
+        return x$1 `<div>
+      <button @click="${this.copyToClipboard}">📋</button>
+      <json-viewer .data=${this.json}></json-viewer>
+    <div>`;
+    }
+    copyToClipboard() {
+        const jsonText = JSON.stringify(this.json);
+        navigator.clipboard.writeText(jsonText)
+            .then(() => console.log('JSON copied to clipboard'))
+            .catch(err => console.error('Error in copying JSON: ', err));
+    }
+}
+__decorate([
+    n$6({ type: String })
+], ClipboardCopy.prototype, "json", void 0);
+customElements.define('json-view-clipboard', ClipboardCopy);
 
 const controls = i$7 `
 ul {
@@ -370,6 +396,7 @@ let AReview = class AReview extends s$5 {
     handleShowDetail(event) {
         const detailHTML = event.detail;
         this.detail = x$1 `${detailHTML}`;
+        this.requestUpdate();
     }
     videoDetail() {
         const content = getDetailContent(this.videoOverview?.messageContext.artifact);
@@ -442,8 +469,7 @@ let ReviewStep = class ReviewStep extends s$5 {
         return x$1 `<div part="review-step" class="stepper ${actionClass}"><span @click=${this.selectMessage} class=${okClasses.filter(Boolean).join(' ')}>${loggerDisplay} ${message}</span> ${detailButton}</div > `;
     }
     selectMessage() {
-        this.showDetail(x$1 `<div class="code">${JSON.stringify(this.logHistory, null, 2)}</div>`);
-        this.showDetail(x$1 `<json-viewer .data=${this.logHistory}></json-viewer>`);
+        this.showDetail(x$1 `<json-view-clipboard .json=${this.logHistory}></json-view-clipboard>`);
     }
     reportDetail(artifactContext) {
         const content = getDetailContent(artifactContext.artifact);
@@ -473,7 +499,8 @@ function getDetailContent(artifact) {
         return x$1 `${o$5(artifact.content)}`;
     }
     else if (artifact.type.startsWith('json')) {
-        return x$1 `<div class="code">${JSON.stringify(artifact.content, null, 2)}</div>`;
+        // return html`<div class="code">${JSON.stringify(artifact.content, null, 2)}</div>`;
+        return x$1 `<json-view-clipboard .json=${JSON.parse(artifact.content)}></json-view-clipboard>`;
     }
     else if (artifact.type === 'video') {
         const videoPath = artifact?.path;
