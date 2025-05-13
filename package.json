@@ -19,7 +19,7 @@
     "test": "HAIBUN_O_WEBPLAYWRIGHT_MONITOR=each HAIBUN_O_OUTXUNIT_STORAGE=StorageFS HAIBUN_O_A11YSTEPPER_STORAGE=StorageFS HAIBUN_KEY=test HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true haibun-cli local",
     "run-walkthrough": "HAIBUN_O_A11YSTEPPER_STORAGE=StorageFS HAIBUN_KEY=test HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS haibun-cli walkthrough",
     "test-vars": "HAIBUN_O_WEBPLAYWRIGHT_MONITOR=each HAIBUN_O_OUTXUNIT_STORAGE=StorageFS HAIBUN_O_A11YSTEPPER_STORAGE=StorageFS HAIBUN_KEY=test HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true haibun-cli vars",
-    "walkthrough": "run-vcapture --tts run-walkthrough w walkthrough build-local files",
+    "walkthrough": "run-vcapture --tts run-walkthrough walkthrough build-local files",
     "help": "npm run test -- --help",
     "test-xss": "npm run test -- xss",
     "test-counter": "npm run test -- counter",
