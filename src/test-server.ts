@@ -1,14 +1,14 @@
 import { rmSync } from 'fs';
 import fileUpload from 'express-fileupload';
 
-import { actionNotOK, actionOK, getFromRuntime, sleep, asError } from '@haibun/core/build/lib/util/index.js';
+import { actionNotOK, actionOK, getFromRuntime, sleep, asError } from '@haibun/core/lib/util/index.js';
 
-import { TNamed, TFeatureStep, OK, IStepperCycles } from '@haibun/core/build/lib/defs.js';
-import { TRequestHandler, IRequest, IResponse, IWebServer, WEBSERVER } from '@haibun/web-server-express/build/defs.js';
+import { TNamed, TFeatureStep, OK, IStepperCycles } from '@haibun/core/lib/defs.js';
+import { TRequestHandler, IRequest, IResponse, IWebServer, WEBSERVER } from '@haibun/web-server-express/defs.js';
 import { restRoutes } from './rest.js';
 import { authSchemes, TSchemeType } from './authSchemes.js';
-import { EExecutionMessageType, TMessageContext } from '@haibun/core/build/lib/interfaces/logger.js';
-import { AStepper } from '@haibun/core/build/lib/astepper.js';
+import { EExecutionMessageType, TMessageContext } from '@haibun/core/lib/interfaces/logger.js';
+import { AStepper } from '@haibun/core/lib/astepper.js';
 
 const TALLY = 'tally';
 
@@ -148,6 +148,10 @@ class TestServer extends AStepper {
 		addCheckAuthTokenRoute: {
 			gwta: 'start check auth route at {loc}',
 			action: this.addRoute(restRoutes(this).checkAuth),
+		},
+		addLogin: {
+			gwta: 'start auth login route at {loc}',
+			action: this.addRoute(restRoutes(this).logIn, 'post'),
 		},
 		addLogoutRoute: {
 			gwta: 'start logout auth route at {loc}',

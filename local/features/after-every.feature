@@ -12,7 +12,7 @@ Backgrounds: service/counter, int/counter
     After every WebPlaywright, Page is accessible accepting serious 9 and moderate 9
     Go to the counter webpage
     input <username> for user name
-    click the button Submit
+    click Submit
 
     URI query parameter username is <username>
     save URI query parameter username to username parameter

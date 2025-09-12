@@ -7,6 +7,7 @@ Files for accessibility checks are served for the automated testing process.
 Serve files from "a11y"
 
 Go to the test webpage
+click "description" by placeholder
 
 The test navigates to the webpage, where the automated accessibility evaluation will take place.
 

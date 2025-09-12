@@ -1,4 +1,4 @@
-import { IRequest, IResponse } from '@haibun/web-server-express/build/defs.js';
+import { IRequest, IResponse } from '@haibun/web-server-express/defs.js';
 import TestServer from './test-server.js';
 
 export type TSchemeType = 'basic' | 'bearer';

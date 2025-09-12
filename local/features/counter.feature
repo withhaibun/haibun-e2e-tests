@@ -2,14 +2,16 @@
 Scenario: A form and counter
     Backgrounds: service/counter, int/counter
 
+    This should pause eh.
     have a valid random username <username>
 
     Then serve files at /static from "counter"
     And start tally route at /count
     
     Go to the counter webpage
+
     When I input <username> for user name
-    And I click the button Submit
+    And I click Submit
 
     Then the URI query parameter username is <username>
     Then save URI query parameter username to username parameter

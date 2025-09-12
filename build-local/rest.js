@@ -60,6 +60,17 @@ export const restRoutes = (testServer) => {
             }
             res.json(testServer.resources);
         },
+        async logIn(req, res) {
+            const { username, password } = req.body;
+            if (testServer.basicAuthCreds && username === testServer.basicAuthCreds.username && password === testServer.basicAuthCreds.password) {
+                testServer.authToken = newToken;
+                res.cookie('token', newToken, { httpOnly: true });
+                res.status(200).send('<h2>Login successful</h2>');
+            }
+            else {
+                res.status(401).send('<h2>Invalid credentials</h2>');
+            }
+        },
     };
 };
 //# sourceMappingURL=rest.js.map

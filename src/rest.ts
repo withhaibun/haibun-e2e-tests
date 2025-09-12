@@ -1,4 +1,4 @@
-import { IRequest, IResponse } from '@haibun/web-server-express/build/defs.js';
+import { IRequest, IResponse } from '@haibun/web-server-express/defs.js';
 
 import TestServer from './test-server.js';
 
@@ -63,6 +63,16 @@ export const restRoutes = (testServer: TestServer) => {
 			}
 
 			res.json(testServer.resources);
+		},
+		async logIn(req: IRequest, res: IResponse) {
+			const { username, password } = req.body;
+			if ( testServer.basicAuthCreds && username === testServer.basicAuthCreds.username && password === testServer.basicAuthCreds.password) {
+				testServer.authToken = newToken;
+				res.cookie('token', newToken, { httpOnly: true });
+				res.status(200).send('<h2>Login successful</h2>');
+			} else {
+				res.status(401).send('<h2>Invalid credentials</h2>');
+			}
 		},
 	};
 };

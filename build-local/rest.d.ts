@@ -1,4 +1,4 @@
-import { IRequest, IResponse } from '@haibun/web-server-express/build/defs.js';
+import { IRequest, IResponse } from '@haibun/web-server-express/defs.js';
 import TestServer from './test-server.js';
 export declare const restRoutes: (testServer: TestServer) => {
     createAuthToken(req: IRequest, res: IResponse): Promise<void>;
@@ -7,4 +7,5 @@ export declare const restRoutes: (testServer: TestServer) => {
     resourceGet(req: IRequest, res: IResponse): Promise<void>;
     resourceDelete(req: IRequest, res: IResponse): Promise<void>;
     resources(req: IRequest, res: IResponse): Promise<void>;
+    logIn(req: IRequest, res: IResponse): Promise<void>;
 };

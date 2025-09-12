@@ -1,11 +1,11 @@
 
 Scenario: Handle popup window
 
-    Backgrounds:  int/popup
+    Backgrounds: int/popup
 
     serve files from "popup"
     Go to the test webpage
-    click the link open
+    click "Open popup"
 
     pause until current tab is 2
     on tab 2

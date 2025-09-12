@@ -6,7 +6,8 @@
     "~@haibun/web-server-express/build/web-server-stepper",
     "~@haibun/storage-fs/build/storage-fs",
     "~@haibun/web-accessibility-axe/build/a11y-axe-stepper",
-    "vars",
+    "variables-stepper",
+    "debugger-stepper",
     "credentials",
     "haibun",
     "./build-local/test-server"

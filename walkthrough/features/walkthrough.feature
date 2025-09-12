@@ -15,6 +15,14 @@ Backgrounds: service/counter, int/counter
 go to the https://github.com/withhaibun/haibun-web-accessibility-axe webpage
 
 We can verify the page is heuristically accessible after every browser action.
+go to the https://withhaibun.github.io/haibun-e2e-tests/monitor.html webpage
+Click "Go to the counter webpage"
+Press Tab
+Press Tab
+Press Enter
+
+Here's the review monitor, with an accessibility result.
+
 After every WebPlaywright, Page is accessible accepting serious 9 and moderate 9
 
 serve files at /static from "counter"
@@ -26,7 +34,7 @@ have a valid random username <username>
 
 Now we'll interact with the browser.
 input <username> for user name
-click the button Submit
+click "Submit"
 
 We can verify that the application processed the input correctly and updated its state.
 URI query parameter username is <username>

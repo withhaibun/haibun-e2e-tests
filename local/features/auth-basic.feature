@@ -1,28 +1,27 @@
 Feature: Auth-basic Authentication
 
-    Scenario: setup
-        Set Resource Server to http://localhost:8123
-        Set Resources Path to "/api/resources"
-        Set Resource Path to "/api/resource"
-        Combine Resource Server and Resources Path as Resources API
-        Set Profile Path to "/me"
-        Combine Resource Path and "/:id" as Resource Delete Route
-        Combine Resource Server and "/static/rest.html" as REST Home
+    Set Resource Server to http://localhost:8123
+    Set Resources Path to "/api/resources"
+    Set Resource Path to "/api/resource"
+    Combine Resource Server and Resources Path as Resources API
+    Set Profile Path to "/me"
+    Combine Resource Path and "/:id" as Resource Delete Route
+    Combine Resource Server and "/static/rest.html" as REST Home
 
-        Start check auth route at Profile Path
-        Start auth resources get route at Resources Path
-        Start auth resource get route at Resource Path
-        Start auth resource delete route at Resource Delete Route
+    Start check auth route at Profile Path
+    Start auth resources get route at Resources Path
+    Start auth resource get route at Resource Path
+    Start auth resource delete route at Resource Delete Route
 
-        Combine Resource Server and Profile Path as Profile API
-        Combine Resource Server and Resource Path as Resource API
+    Combine Resource Server and Profile Path as Profile API
+    Combine Resource Server and Resource Path as Resource API
 
-        Set OK to 200
-        Set Unauthorized to 401
+    Set OK to 200
+    Set Unauthorized to 401
 
-        Serve files at /static from "rest"
-        Make auth scheme basic
-        API user agent is "curl/8.5.0"
+    Serve files at /static from "rest"
+    Make auth scheme basic
+    API user agent is "curl/8.5.0"
 
     Scenario: Fail authentication 
         Go to the REST Home webpage
