@@ -18,12 +18,9 @@ Scenario: Generate and clear a QR code
 
   canvas "canvas" is empty
 
-Take a screenshot
   input "hmm hmm" for #text-input
 
   click "Draw QR Code"
 
   not canvas "canvas" is empty
   
-
-  This will serve the local qrcode static files and exercise the UI.
