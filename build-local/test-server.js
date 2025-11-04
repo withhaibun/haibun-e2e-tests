@@ -1,16 +1,19 @@
 import { rmSync } from 'fs';
 import fileUpload from 'express-fileupload';
 import { actionNotOK, actionOK, getFromRuntime, sleep, asError } from '@haibun/core/lib/util/index.js';
-import { OK } from '@haibun/core/lib/defs.js';
+import { DOMAIN_STRING } from "@haibun/core/lib/domain-types.js";
+import { OK, Origin } from '@haibun/core/lib/defs.js';
 import { WEBSERVER } from '@haibun/web-server-express/defs.js';
 import { restRoutes } from './rest.js';
 import { authSchemes } from './authSchemes.js';
 import { EExecutionMessageType } from '@haibun/core/lib/interfaces/logger.js';
 import { AStepper } from '@haibun/core/lib/astepper.js';
 const TALLY = 'tally';
+const setTally = (value) => ({ term: TALLY, value: String(value), domain: DOMAIN_STRING, origin: Origin.var });
 const cycles = (ts) => ({
     startFeature: async () => {
-        ts.getWorld().shared.set(TALLY, '0');
+        const p = { when: `${TestServer.name}.cycles.startFeature`, seq: [0] };
+        ts.getWorld().shared.set(setTally(0), p);
         ts.resources = [
             {
                 id: 1,
@@ -46,7 +49,8 @@ class TestServer extends AStepper {
         }
     }
     addRoute = (route, method = 'get') => {
-        return async ({ loc }, vstep) => {
+        return async (args, vstep) => {
+            const { loc } = args;
             let webserver = getFromRuntime(this.getWorld().runtime, WEBSERVER);
             try {
                 webserver.addRoute(method, loc, route);
@@ -60,14 +64,15 @@ class TestServer extends AStepper {
         };
     };
     tally = async (req, res) => {
-        this.getWorld().shared.set(TALLY, `${(parseInt(this.getWorld().shared.get(TALLY) || '', 10) || 0) + 1}`);
-        this.getWorld().logger.log(`tally ${this.getWorld().shared.get(TALLY)}`);
+        const cur = (parseInt(this.getWorld().shared.get(TALLY), 10) || 0) + 1;
+        this.getWorld().shared.set(setTally(cur), { when: 'tally', seq: [cur] });
+        this.getWorld().logger.log(`tally ${cur}`);
         const { username } = req.query;
         await sleep(Math.random() * 2000);
         res
             .status(200)
             .cookie('userid', username)
-            .send(`<h1>Counter test</h1>tally: ${this.getWorld().shared.get(TALLY)}<br />username ${username} `);
+            .send(`<h1>Counter test</h1>tally: ${cur}<br />username ${username} `);
     };
     download = async (req, res) => {
         if (!this.toDelete.uploaded) {
@@ -103,7 +108,8 @@ class TestServer extends AStepper {
         addUploadRoute: {
             gwta: 'start upload route at {loc}',
             // Define action directly to include middleware, bypassing addRoute helper
-            action: async ({ loc }, vstep) => {
+            action: async (args, vstep) => {
+                const { loc } = args;
                 try {
                     const webserver = getFromRuntime(this.getWorld().runtime, WEBSERVER);
                     // Register route directly with method, location, middleware (cast to any), and handler
@@ -127,7 +133,8 @@ class TestServer extends AStepper {
         },
         changeServerAuthToken: {
             gwta: 'change server auth token to {token}',
-            action: async ({ token }) => {
+            action: async (args, vstep) => {
+                const { token } = args;
                 this.authToken = token;
                 return actionOK();
             },
@@ -158,7 +165,8 @@ class TestServer extends AStepper {
         },
         setAuthScheme: {
             gwta: 'make auth scheme {scheme}',
-            action: async ({ scheme }) => {
+            action: async (args, vstep) => {
+                const { scheme } = args;
                 this.authScheme = authSchemes[scheme](this);
                 return OK;
             },

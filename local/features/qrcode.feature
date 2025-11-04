@@ -18,7 +18,7 @@ Scenario: Generate and clear a QR code
 
   canvas "canvas" is empty
 
-  input "hmm hmm" for #text-input
+  input "hmm hmm" for label
 
   click "Draw QR Code"
 

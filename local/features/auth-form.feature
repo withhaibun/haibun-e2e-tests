@@ -1,7 +1,7 @@
 Feature: Form-based Authentication
 
     Set Resource Server to http://localhost:8123
-    Combine Resource Server and "/static/rest.html" as REST Home
+    Combine Resource Server and "/static/rest.html" to REST Home
 
     Start auth login route at /login
 

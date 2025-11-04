@@ -8,7 +8,6 @@
     "~@haibun/web-accessibility-axe/build/a11y-axe-stepper",
     "variables-stepper",
     "debugger-stepper",
-    "credentials",
     "haibun",
     "./build-local/test-server"
   ]

@@ -1,5 +1,7 @@
+show vars
+not variable "wtw" is set
 
-if variable "wtw" is not set, Backgrounds: if/set-true
+if not variable "wtw" is set, Backgrounds: if/set-true
 
 variable "wtw" is "true"
 
