@@ -2,52 +2,38 @@
   "type": "module",
   "publish": "true",
   "name": "@haibun/e2e-tests",
-  "version": "1.56.0",
+  "version": "3.0.0",
   "description": "e2e tests for haibun",
-  "files": [
-    "build",
-    "local",
-    "publish",
-    "files"
-  ],
   "engines": {
     "node": ">=14"
   },
   "scripts": {
-    "build-watch": "tsc --watch",
-    "build": "tsc",
-    "test": "HAIBUN_O_WEBPLAYWRIGHT_MONITOR=each HAIBUN_O_OUTXUNIT_STORAGE=StorageFS HAIBUN_O_A11YSTEPPER_STORAGE=StorageFS HAIBUN_KEY=test HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=true haibun-cli local",
-    "test-debug": "HAIBUN_O_OUTXUNIT_STORAGE=StorageFS HAIBUN_O_A11YSTEPPER_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_HTTPEXECUTORSTEPPER_LISTEN_PORT=8125 HAIBUN_O_WEBPLAYWRIGHT_MONITOR=each haibun-cli -c debug/config.json local",
     "run-walkthrough": "HAIBUN_O_WEBPLAYWRIGHT_MONITOR=each HAIBUN_O_A11YSTEPPER_STORAGE=StorageFS HAIBUN_KEY=test HAIBUN_O_WEBPLAYWRIGHT_STORAGE=StorageFS HAIBUN_O_WEBPLAYWRIGHT_CAPTURE_VIDEO=false haibun-cli walkthrough",
     "walkthrough": "run-vcapture --tts run-walkthrough walkthrough build-local files",
     "vcapture-dev": "HAIBUN_STAY=always run-vcapture test local build-local files",
-    "help": "npm run test -- --help",
-    "test-xss": "npm run test -- xss",
-    "test-counter": "npm run test -- counter",
-    "test-upload": "npm run test --  upload",
-    "publish": "haibun-cli --config publish/local publish",
-    "complete": "HAIBUN_TRACE=true HAIBUN_KEY=test npm run test && npm run publish"
+    "build": "tsc"
   },
   "keywords": [],
   "author": "vid",
   "license": "ISC",
   "dependencies": {
-    "@haibun/cli": "~2.0",
-    "@haibun/core": "~2.0",
-    "@haibun/domain-storage": "~2.0",
-    "@haibun/mcp": "~2.0",
-    "@haibun/out-xunit": "~2.0",
-    "@haibun/parse-md": "~2.0",
-    "@haibun/storage-fs": "~2.0",
-    "@haibun/storage-mem": "~2.0",
-    "@haibun/utils": "~2.0",
-    "@haibun/web-accessibility-axe": "^1.73",
-    "@haibun/web-http": "~2.0",
-    "@haibun/web-playwright": "~2.0",
-    "@haibun/web-server-express": "~2.0",
-    "@types/express-fileupload": "^1.4.1",
-    "@types/jest": "^29.5.11",
-    "express-fileupload": "^1.4.0",
-    "typescript": "~5.8"
+    "@haibun/cli": "^3.0",
+    "@haibun/core": "^3.0",
+    "@haibun/domain-storage": "^3.0",
+    "@haibun/mcp": "^3.0",
+    "@haibun/out-junit": "^3.0",
+    "@haibun/parse-md": "^3.0",
+    "@haibun/storage-fs": "^3.0",
+    "@haibun/storage-mem": "^3.0",
+    "@haibun/utils": "^3.0",
+    "@haibun/web-accessibility-axe": "^3.0",
+    "@haibun/web-http": "^3.0",
+    "@haibun/web-playwright": "^3.0",
+    "@haibun/web-server-express": "^3.0",
+    "express-fileupload": "^1.5.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.10.1"
   }
 }
